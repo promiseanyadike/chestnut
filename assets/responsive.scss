@@ -1,0 +1,427 @@
+@import "variable.scss";
+
+
+@media (max-width: 440px) {
+  .homePage {
+    .news {
+      .container {
+        padding: $spacing*0.5;
+      }
+
+      .newsBlock {
+        margin-left: 35px;
+        margin-right: 35px;
+      }
+
+    }
+  }
+
+  .headerComp {
+    // position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 8;
+  }
+
+  .headerComp .menuList {
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-around;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border: none !important;
+
+    .menuItem {
+      background-color: #585252b5;
+      min-width: 100px;
+    }
+
+    .logo--sub {
+      display: flex;
+
+      justify-content: flex-end;
+      padding-bottom: 70px;
+      left: 9px !important;
+      top: -22px;
+    }
+  }
+
+
+
+  .paragraphBlock {
+    $fontSize: 4em;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    line-height: 30px;
+    background-color: #fff;
+    // height: 400px;
+
+    &--subtitle {
+      color: #4a4a4a;
+      font-size: $fontSize/3;
+      font-weight: 400;
+      line-height: 2.25;
+      word-break: break-word;
+      margin-bottom: $spacing;
+      justify-content: center !important;
+    }
+
+    .paragraphBlock--content {
+      font-size: 1.4em*0.7;
+      height: 100%;
+      overflow: hidden !important;
+      // height: 100% !important;
+    }
+  }
+
+
+  .investigateBlock {
+    $fontSize: 4em;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    line-height: 30px;
+    background-color: #fff;
+    // height: 400px;
+
+    &--subtitle {
+      color: #4a4a4a;
+      font-size: $fontSize/3;
+      font-weight: 400;
+      line-height: 2.25;
+      word-break: break-word;
+      margin-bottom: $spacing;
+      justify-content: center !important;
+    }
+
+    .investigateBlock--content {
+      font-size: 1.4em*0.7;
+      height: 100%;
+      overflow: hidden !important;
+      // height: 100% !important;
+    }
+  }
+
+  .paragraphBlock--content {
+    // font-size: 16px;
+    // height: 100%;
+    overflow-y: scroll;
+  }
+
+  .investigateBlock--content {
+    // font-size: 16px;
+    // height: 100%;
+    overflow-y: scroll;
+  }
+  .practiceareaBlock {
+    margin: 22.5px -1px !important;
+  }
+
+  .resourcesBlock {
+    margin: 20px 5px !important;
+  }
+
+
+  .practice--area {
+    display: flex;
+    justify-content: center;
+
+    .title {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .ourPeople {
+    display: flex;
+    justify-content: center;
+
+    .title {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .news {
+    .title {
+      padding-top: $spacing*2;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .newsinner {
+    padding-top: $spacing !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin: 0px !important;
+
+    .newsinnerBlock--title {
+      font-size: 21px;
+    }
+
+    .newsinnerBlock--area {
+      font-size: 16px;
+      line-height: 25px;
+
+      img {
+        float: left;
+        width: 100%;
+      }
+    }
+
+    .newsinnerBlock--content {
+      font-size: 14px;
+    }
+  }
+
+
+
+  .careersBlock {
+    padding: 30px !important;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column !important;
+
+    .careersImg {
+      width: 300px;
+    }
+
+    .careersContent {
+      padding: 25px !important;
+      width: 350px !important;
+      line-height: 30px;
+      // padding-right:30px !important;
+    }
+  }
+
+  .contactBlock {
+    padding: $spacing;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+
+    .leftText {
+      font-size: 14px !important;
+      padding: $spacing;
+      width: 250px !important;
+      display: flex;
+      flex-direction: column;
+      line-height: 30px;
+    }
+
+
+    .contactForm {
+      width: 250px !important;
+      padding: $spacing;
+    }
+  }
+
+  .peopleContainer {
+    padding: 20px !important;
+
+    .peopleTitle {
+      display: flex;
+      justify-content: center;
+      padding-left: 0px !important;
+    }
+  }
+
+
+
+  .resources {
+    .container {
+      padding: 20px !important;
+    }
+
+    .resources--footer {
+      padding-top: 0px !important;
+    }
+  }
+
+  .resourcesinner {
+    margin: 0px !important;
+
+  }
+
+  .resourcesinnerBlock {
+    margin: 0px !important;
+
+    &--title {
+      font-size: 20px !important;
+      text-align: center;
+
+    }
+
+    .resourcesinnerBlock--area {
+      text-align: center !important;
+    }
+
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .hidden-mobile {
+    display: none !important;
+  }
+
+
+  .thefirmBody,
+  .historyArea,
+  .reputationArea {
+    padding: 30px !important;
+  }
+
+  .contactBlock {
+
+    .leftText {
+      width: 300px !important;
+    }
+
+    .contactForm {
+      width: 300px !important;
+    }
+  }
+
+  .profilePage {
+    display: flex;
+    justify-content: center !important;
+  }
+
+  .peopleProfile {
+    display: flex;
+    justify-content: center !important;
+    flex-direction: column;
+    min-width: 300px !important;
+  }
+
+  .peopleProfile--content {
+    width: 250px;
+  }
+
+  .peopleProfile2 {
+    display: flex;
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  .columns {
+    text-align: center;
+  }
+
+  // .profileContent{
+  //     display: flex;
+  //     justify-content: center;
+  //     width: 300px;
+  //     flex-direction: column;
+  // }
+
+  .imageBlock
+    {
+    margin-right: 0px !important;
+    text-align: center !important;
+    // border: 1px solid red;
+  }
+
+  .info--details {
+    display: flex;
+    justify-content: center;
+  }
+
+  .Nametitle {
+    text-align: center;
+    padding: $spacing;
+    //    border: 1px solid red;
+  }
+
+  .contactleft {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contact--form {
+    min-width: 60px !important;
+    border-radius: 0px !important;
+  }
+
+  .profileBlock {
+    padding: $spacing;
+    display: flex;
+    justify-content: center;
+
+    &--content {
+      text-align: center;
+      padding: $spacing*2 !important;
+      display: flex;
+      flex-direction: column;
+      // justify-content:space-between;
+      background-color: #e4e4e4;
+      width: 950px !important;
+      min-height: 50px;
+      border-radius: 5px;
+      // border:1px solid pink;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  .copyright {
+    font-size: 14px;
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: center;
+  }
+
+  .formTitle {
+    font-size: 20px !important;
+    margin-bottom: 100px !important;
+  }
+
+  .homePage .contactBox {
+    display: flex;
+    justify-content: flex-start;
+    padding: 45px 1.5px;
+  }
+
+  .contactTitle {
+    padding: 0 !important;
+    padding-bottom: 10px !important;
+    margin-left: 15px !important;
+    // border: 1px solid red;
+    border-bottom: 2px solid orange;
+    width: 150px;
+    text-align: left Important;
+  }
+
+  .contactText {
+    padding-top: 0px !important;
+  }
+
+  .thefirm--headtitle {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .profilewrap {
+    padding: 0px !important;
+  }
+
+  .download {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .downloadtext {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+  }
+}

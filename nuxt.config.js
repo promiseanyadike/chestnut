@@ -14,6 +14,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    'bulma-carousel/dist/css/bulma-carousel.min.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -31,7 +32,19 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
+    '@nuxtjs/axios',
+    "@nuxtjs/proxy"
   ],
+
+  axios: {
+    proxy: true,
+    credentials: true,
+  },
+
+  proxy: {
+    '/api': 'http://localhost:4000',
+    '/public': 'http://localhost:4000'
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

@@ -1,0 +1,53 @@
+@import "variable.scss";
+
+.footerComp {
+    padding: $spacing;
+    .footer--top{ 
+        border-top: 1px solid #ccc;
+        $spacing: 15px;
+        padding:$spacing;
+    }
+    .copyright{
+        text-align: center;
+        font-size: 14px;
+
+        p{
+            margin-bottom: 11px;
+        }
+    }
+    .orbsol{
+        border-top: 1px solid whitesmoke;
+        text-align: center;
+        a{
+            text-decoration: none;
+            color: grey;
+            font-size: 13px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    }
+    &--title{
+        font-family: Oxygen;
+        font-weight: 600;
+        padding-bottom:$spacingbottom;
+        text-transform: uppercase;
+    }
+    &--logo{
+        padding-top:90px;
+    }
+
+    &--socialicons{
+        display: flex;
+        justify-content: left;
+
+        li {margin: 0 3px;}
+    }
+
+    ul {
+      font-size: 14px;
+      line-height: 28px;
+      a{
+          color: #303030;
+      }
+    }
+
+}

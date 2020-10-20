@@ -1,92 +1,65 @@
 <template>
-  <div class="headerComp">
-    <div class="pageLogo">
-      <nuxt-link to="/">
-        <div class>
-          <!-- <div class="logo">
-            Sofunde Osakwe Ogundipe & Belgore
-          </div>
-          <div class="logo--sub">
-            legal practitioners
-          </div>-->
-          <img class="soob-logo" src="/img/logo.png" alt />
+  <div class="columns is-gapless paragraphBlockComp" :id="id" :class="{reverse: reverse}">
+    <div class="column">
+      <div class="paragraphBlock">
+        <h3 class="paragraphBlock--title">{{ title }}</h3>
+        <p class="paragraphBlock--subtitle">{{ subtitle }}</p>
+        <div class="paragraphBlock--content">
+          <div v-html="content" />
         </div>
-      </nuxt-link>
-      <div class="burgerMenu" @click="toggleNavigation" v-if="showBurger">
-        <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>-->
-        <i class="mdi mdi-menu faicon" />
       </div>
-      <!-- <img src="logo.png" /> -->
     </div>
 
-    <div class="menuList" v-if="showNav">
-      <nuxt-link v-for="(i,idx) in menu" :key="idx" :to="i.url" class="menuItem">{{ i.label }}</nuxt-link>
-    </div>
-
-    <div class="menuList" v-if="showNavigation">
-      <nuxt-link v-for="(i,idx) in menu" :key="idx" :to="i.url" class="menuItem">{{ i.label }}</nuxt-link>
+    <div class="column is-hidden-mobile">
+      <div class="paragraphImage" :style="{'background-image': url}" />
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
 export default {
-  watch: {
-    $route: function () {
-      this.showNavigation = false;
+  props: {
+    title: {
+      type: String,
+      default: "",
     },
-
-    windowWidth: function (val) {
-      if (val >= 768) {
-        this.showNavigation = false;
-        this.showNav = true;
-        this.showBurger = false;
-      }
-      if (val < 768) {
-        this.showNavigation = false;
-        this.showNav = false;
-        this.showBurger = true;
-      }
+    subtitle: {
+      type: String,
+      default: "",
     },
-  },
-
-  data() {
-    return {
-      showNavigation: false,
-      showNav: false,
-      showBurger: false,
-      windowWidth: 0,
-    };
-  },
-
-  created() {
-    if (typeof window !== "undefined") {
-      this.$nextTick(() => {
-        window.addEventListener("resize", this.getWindowWidth);
-        this.getWindowWidth();
-      });
-    }
+    content: {
+      type: String,
+      default: "",
+    },
+    image: {
+      type: String,
+      default: "",
+    },
+    id: {
+      type: Number,
+      default: 0,
+    },
+    reverse: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
-    ...mapState(["menu"]),
-  },
-
-  methods: {
-    toggleNavigation() {
-      this.showNavigation = !this.showNavigation;
-    },
-
-    getWindowWidth(event) {
-      this.windowWidth = document.documentElement.clientWidth;
+    url() {
+      return `url(${this.image})`;
     },
   },
 };
 </script>
+
+<style lang="scss">
+.paragraphBlockComp.reverse {
+  flex-direction: row-reverse;
+}
+.paragraphBlock--content {
+  color: red;
+}
+</style>
 
 

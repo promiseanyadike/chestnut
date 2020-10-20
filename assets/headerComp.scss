@@ -1,0 +1,144 @@
+@import "variable.scss";
+
+.headerComp {
+  font-size: 14px;
+  padding: $spacing;
+  background-color: rgba(#333, 0.6);
+  padding: 15px;
+  background-color: rgba(51, 51, 51, .6);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .pageLogo {
+    display: flex;
+    align-items: center;
+
+    .logo--sub {
+      display: flex;
+      color: #fff;
+      font-family: serif;
+      font-style: italic;
+      font-size: 12px;
+      position: relative;
+      left: 70%;
+    }
+  }
+
+  .menuList {
+    display: flex;
+    justify-content: space-between;
+
+
+    .menuItem {
+      color: #fff;
+      text-align: center;
+      margin-right: 15px;
+      font-size: 16px;
+      font-family: 'Lato', sans-serif;
+      display: inline-block;
+    }
+  }
+}
+
+.headerComp .menuList .menuItem:last-child {
+  margin-right: 0px;
+}
+
+@media (max-width: 768px) {
+
+
+  .headerComp {
+    background-color: rgba(0, 0, 0, .5);
+
+
+  }
+
+  .headerComp {
+    display: flex;
+    flex-direction: column !important;
+    padding: $spacing 0;
+
+    .faicon{
+      color:white;
+      margin-left: 10px;
+      font-size: 200%;
+      margin-top: 5px;
+    }
+
+    .pageLogo {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .menuList {
+      display: flex;
+      // justify-content: space-evenly;
+      // width: 100%;
+      padding: 0 15px;
+      flex-wrap: wrap;
+    //   border: solid 3px green;
+
+      z-index: 8;
+      position: absolute;
+      // bottom: 389px;
+      top: 112px;
+      // height: 100px;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+
+
+      .menuItem {
+        display: flex;
+        color: #fff;
+        display: inline-block;
+        font-size: 14px;
+        margin-bottom: 10px;
+        padding: $spacing/1;
+        background-color: #585151;
+        border-radius: 10px;
+
+      }
+    }
+
+    .logo {
+      font-size: 18px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-weight: 800;
+      position: relative;
+      // right: -14px;
+    }
+
+    .logo--sub {
+      display: flex;
+      justify-content: flex-end;
+      color: #fff;
+      font-family: serif;
+      font-style: italic;
+      font-size: 14px;
+      position: relative;
+      padding-bottom: 10px;
+      left: 0.5px !important;
+      top: 0.5px !important;
+
+    }
+
+    .burgerMenu {
+      display: block;
+      height: 3.25rem;
+      position: relative;
+      width: 3.25rem;
+      right: -8px;
+      margin-left: auto;
+
+      a {
+        color: #fff;
+      }
+    }
+
+  }
+
+}

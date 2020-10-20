@@ -1,0 +1,40 @@
+.navbar {
+  /* background-color: transparent; */
+  background-color: black;
+}
+.field.has-addons {
+  padding-top: 18px !important;
+  justify-content: center;
+}
+.navbar-item {
+  color: yellow;
+}
+/* .navbar-item :hover{
+    color:black;
+  } */
+.navbar-end a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 95%;
+  font-weight: bold;
+}
+/* nav a img {
+    min-height: 860% !important;
+  } */
+.navbar-item img {
+  max-height: 3.5rem;
+}
+@media screen and (max-width: 481px) {
+  .navbar-item img {
+    max-height: 4.75rem !important;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .navbar-item img {
+    max-height: 4.75rem !important;
+  }
+}
+// .navbar-menu {
+//   background-color: black !important;
+// }

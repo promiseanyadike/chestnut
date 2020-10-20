@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>good to go</div>
 </template>
 
 <script>
