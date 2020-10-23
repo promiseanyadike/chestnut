@@ -214,11 +214,11 @@ h1 {
 
 .reputationArea {
   padding: $spacing*4;
-  background-image: url(/img/backgroundp1.png);
+  // background-image: url(/img/backgroundp1.png);
 }
 
 .homePage {
-  background-image: url(/img/backgroundp1.png);
+  // background-image: url(/img/backgroundp1.png);
 
 
   .paragraphBlock {
@@ -283,7 +283,7 @@ h1 {
   }
 
   .news {
-    background-image: url(/img/backgroundp1.png);
+    // background-image: url(/img/backgroundp1.png);
 
     .container {
       padding: $spacing*3;
@@ -526,7 +526,7 @@ h1 {
 
 
   .practicearea {
-    background-image: url(/img/backgroundp1.png);
+    // background-image: url(/img/backgroundp1.png);
 
     .container {
       padding: $spacing*3;
@@ -1169,6 +1169,7 @@ h1 {
 
 .second_section {
   background-image: url("/img/full-bloom.png");
+  padding-bottom: 2.875rem;
 }
 
 @import "responsive.scss";
@@ -1217,12 +1218,52 @@ h1 {
 }
 
 .is-uppercase.is-size-3{
-  padding: 3rem;
-  color: #363636;
+  padding: 2rem 0;
+  color:white;
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.125;
   word-break: break-word;
   font-family: Oxygen;
   font-weight: 900;
+}
+
+
+.services.is-uppercase.is-size-3{
+  padding: 3rem 0rem 2rem 6rem;
+  color: black;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.125;
+  word-break: break-word;
+  font-family: Oxygen;
+  font-weight: 900;
+}
+
+.dark {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+// .page-title {
+//   border-bottom: 4px solid #77BCE2;
+//   margin: 0px 0;
+// }
+
+.event {
+  // object-fit: cover;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.columns.is-gapless:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.never {
+  padding: 1rem 0;
+  text-align: center;
 }
