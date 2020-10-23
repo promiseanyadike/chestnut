@@ -65,7 +65,7 @@ export const actions = {
 
 	async getContactPage({ commit }) {
 		try {
-			let id = 5
+			let id = 3
 			let req = await this.$axios.$get(`api/page/${id}`)
 			if (req.code == 200) {
 				let page = req.store;

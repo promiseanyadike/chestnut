@@ -92,5 +92,16 @@ export const actions = {
 		} catch (error) {
 			console.log("An error occurred", error)
 		}
+	},
+
+	async Postsubmission({ commit }, param) {
+		try {
+			let req = await this.$axios.$post(`api/submission`, param.data)
+			console.log(req)
+			return req.store
+		} catch (error) {
+			console.log("an error occured", error)
+			throw error
+		}
 	}
 }

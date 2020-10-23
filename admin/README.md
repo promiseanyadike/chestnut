@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# www
+# admin
 
 ## Build Setup
 
@@ -19,8 +18,3 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-=======
-# chestnut
-
-chestnut frontend
->>>>>>> a6e5c24df05a1515bec62004997d2b3df325764d

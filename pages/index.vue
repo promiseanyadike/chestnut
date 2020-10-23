@@ -41,7 +41,7 @@
       class="dark"
       :style="{'background-image': `linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(${galleryPage.page.attributes.image.banner_image.data})`}"
     >
-      <div class="container" v-if="galleryImages.length > 0">
+      <div class="container" v-if="galleryImages.length > 0" style="padding: 2rem 0">
         <!-- <div class="container"> -->
         <div class="is-uppercase is-size-3">GALLERY</div>
         <div class="columns is-gapless">
@@ -68,6 +68,119 @@
         </div>
       </div>
     </section>
+
+    <!-- contact starts here -->
+    <div
+      class="footerContact"
+      :style="{'background-image': `linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(${contactPage.page.attributes.image.data})`}"
+    >
+      <div class="container">
+        <div class="contactBox">
+          <div class="contact--form">
+            <div class="contactTitle">
+              <span>Get In touch</span>
+            </div>
+            <div class="contactContent">
+              <div class="contactleft">
+                <div class="contactText">
+                  <span v-html="contact.address" />
+                  <p>
+                    <strong>Email</strong>
+                    <br />
+                  </p>
+                  <span v-html="contact.email" />
+                  <p>
+                    <strong>Telephone</strong>
+                    <br />
+                  </p>
+                  <span v-html="contact.telephone" />
+                </div>
+              </div>
+
+              <!-- form starts here -->
+              <div class="formSection is-hidden-mobile">
+                <span class="formTitle">Enquiry Form</span>
+                <br />
+                <br />
+                <b-field
+                  label
+                  :type="errors.has('name') ? 'is-danger': ''"
+                  :message="errors.first('name')"
+                >
+                  <b-input
+                    v-model="form.name"
+                    placeholder="Name"
+                    name="name"
+                    v-validate="'required'"
+                  />
+                </b-field>
+
+                <b-field
+                  label
+                  :type="errors.has('email') ? 'is-danger': ''"
+                  :message="errors.first('email')"
+                >
+                  <b-input
+                    v-model="form.email"
+                    placeholder="Email"
+                    name="email"
+                    v-validate="'required'"
+                  />
+                </b-field>
+
+                <b-field
+                  :type="errors.has('Phone Number') ? 'is-danger': ''"
+                  :message="errors.has('Phone Number') ? errors.first('Phone Number') : ''"
+                >
+                  <label class="label has-text-white">
+                    Mobile Number
+                    <b-input
+                      v-validate="'required|numeric'"
+                      placeholder="Phone Number"
+                      v-model="form.telephone"
+                      type="text"
+                    ></b-input>
+                  </label>
+                </b-field>
+
+                <b-field
+                  label
+                  :type="errors.has('subject') ? 'is-danger': ''"
+                  :message="errors.first('subject')"
+                >
+                  <b-input
+                    v-model="form.subject"
+                    placeholder="Subject"
+                    name="subject"
+                    v-validate="'required'"
+                  />
+                </b-field>
+
+                <b-field
+                  label
+                  :type="errors.has('message') ? 'is-danger': ''"
+                  :message="errors.first('message')"
+                >
+                  <b-input
+                    v-model="form.message"
+                    type="textarea"
+                    placeholder="Message"
+                    name="message"
+                    v-validate="'required'"
+                  />
+                </b-field>
+
+                <div>
+                  <button class="button is-link" @click="sendEnquiry">Submit</button>
+                </div>
+              </div>
+              <!-- form ends here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- contact ends here -->
   </div>
 </template>
 
@@ -82,15 +195,50 @@ export default {
   layout: "home",
   ParagraphBlock,
   components: {},
+  form: {
+    name: "",
+    email: "",
+    telephone: "",
+    message: "",
+    subject: "",
+    date: null,
+  },
 
   computed: {
     ...mapState(["servicePages"]),
     ...mapState("gallery", ["gallery"]),
+    // ...mapState("contact", ["contactPages"]),
 
     galleryImages() {
       let x = this.gallery.slice();
       console.log(x);
       return x.splice(0, 4);
+    },
+  },
+
+  methods: {
+    async sendEnquiry() {
+      this.form.date = new Date();
+      let result = await this.$validator.validateAll();
+      if (result) {
+        let res = await this.$store.dispatch("Postsubmission", this.form);
+        if (res == 1) {
+          this.$dialog.alert({
+            message:
+              "Thank you for contacting us, we'll get back to you as soon as possible..",
+            type: "is-success",
+            position: "is-top",
+            onConfirm: () => window.location.reload(true),
+          });
+          return;
+        }
+        this.$snackbar.open({
+          message: "Error Sending Enquiry",
+          type: "is-danger",
+          position: "is-top",
+        });
+        return;
+      }
     },
   },
 
@@ -100,7 +248,9 @@ export default {
         store.dispatch("pages/getHomePage"),
         store.dispatch("service/getServicePage"),
         store.dispatch("gallery/getInstagramGallery"),
-        store.dispatch("pages/getGalleryPage", 2),
+        store.dispatch("pages/getGalleryPage"),
+        store.dispatch("pages/getContactPage"),
+        store.dispatch("contact/getContactInfo"),
         // store.dispatch("pages/getAboutPage"),
         // store.dispatch("pages/getContactPage"),
       ]);
@@ -112,13 +262,17 @@ export default {
     let value = copy(store.state.pages.homePage);
     let service = copy(store.state.service.servicePage);
     let galleryPage = copy(store.state.pages.galleryPage);
-    // let contact = copy(store.state.pages.contactPage);
+    let contactPage = copy(store.state.pages.contactPage);
+
+    let contact = copy(store.state.contact.contactPages);
     // console.log(value);
     console.log(service);
     return {
       value,
       service,
       galleryPage,
+      contactPage,
+      contact,
       // contact,
     };
   },
