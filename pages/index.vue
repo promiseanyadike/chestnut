@@ -137,7 +137,7 @@
                     <b-input
                       v-validate="'required|numeric'"
                       placeholder="Phone Number"
-                      v-model="form.telephone"
+                      v-model="form.phone_no"
                       type="text"
                     ></b-input>
                   </label>
@@ -195,13 +195,18 @@ export default {
   layout: "home",
   ParagraphBlock,
   components: {},
-  form: {
-    name: "",
-    email: "",
-    telephone: "",
-    message: "",
-    subject: "",
-    date: null,
+
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        phone_no: "",
+        subject: "",
+        message: "",
+        date: null,
+      },
+    };
   },
 
   computed: {
@@ -221,7 +226,7 @@ export default {
       this.form.date = new Date();
       let result = await this.$validator.validateAll();
       if (result) {
-        let res = await this.$store.dispatch("Postsubmission", this.form);
+        let res = await this.$store.dispatch("sendEnquiry", this.form);
         if (res == 1) {
           this.$dialog.alert({
             message:
