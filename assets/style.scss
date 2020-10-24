@@ -472,7 +472,7 @@ h1 {
   .contactBox {
     display: flex;
     justify-content: flex-end;
-    padding: $spacing*3 $spacing*.1;
+    padding: $spacing*6 $spacing*.1;
 
     .contact--form {
       padding: $spacing;
@@ -1266,4 +1266,8 @@ h1 {
 .never {
   padding: 1rem 0;
   text-align: center;
+}
+
+.contactText span {
+  padding-left: 7px;
 }

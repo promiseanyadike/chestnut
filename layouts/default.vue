@@ -16,7 +16,7 @@
       <nuxt />
     </div>
 
-    <layout-footer />
+    <!-- <layout-footer /> -->
   </div>
 </template>
 

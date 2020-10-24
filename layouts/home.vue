@@ -4,7 +4,7 @@
     <div class="nomineeLayout_body">
       <nuxt />
     </div>
-    <!-- <layout-footer /> -->
+    <layout-footer />
   </div>
 </template>
 
