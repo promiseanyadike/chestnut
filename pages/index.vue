@@ -129,18 +129,17 @@
                 </b-field>
 
                 <b-field
-                  :type="errors.has('Phone Number') ? 'is-danger': ''"
-                  :message="errors.has('Phone Number') ? errors.first('Phone Number') : ''"
+                  label
+                  :type="errors.has('phone_no') ? 'is-danger': ''"
+                  :message="errors.has('phone_no') ? errors.first('phone_no') : ''"
                 >
-                  <label class="label has-text-white">
-                    Mobile Number
-                    <b-input
-                      v-validate="'required|numeric'"
-                      placeholder="Phone Number"
-                      v-model="form.phone_no"
-                      type="text"
-                    ></b-input>
-                  </label>
+                  <b-input
+                    placeholder="Phone Number"
+                    v-model="form.phone_no"
+                    v-validate="'required'"
+                    name="phone_no"
+                    type="text"
+                  ></b-input>
                 </b-field>
 
                 <b-field
@@ -187,7 +186,7 @@
 <script>
 import axios from "axios";
 import { mapState } from "vuex";
-import { copy } from "@/utils/helpers";
+import { copy, Dialog } from "@/utils/helpers";
 import ParagraphBlock from "@/components/paragraphBlock";
 
 export default {
@@ -228,7 +227,7 @@ export default {
       if (result) {
         let res = await this.$store.dispatch("sendEnquiry", this.form);
         if (res == 1) {
-          this.$dialog.alert({
+          this.$buefy.dialog.alert({
             message:
               "Thank you for contacting us, we'll get back to you as soon as possible..",
             type: "is-success",
@@ -237,7 +236,7 @@ export default {
           });
           return;
         }
-        this.$snackbar.open({
+        this.$buefy.snackbar.open({
           message: "Error Sending Enquiry",
           type: "is-danger",
           position: "is-top",

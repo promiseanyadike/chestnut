@@ -100,7 +100,7 @@ export const actions = {
 		try {
 			let {
 				data
-			} = await this.$axios.post('/api/submission/', params)
+			} = await this.$axios.post('/api/submission', params)
 			if (data.code == 200) {
 				return 1
 			}

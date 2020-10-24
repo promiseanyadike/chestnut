@@ -1,9 +1,33 @@
+// export function clone(val) {
+//   return JSON.parse(JSON.stringify(val))
+// }
+
+// export function Notification(self, message, type) {
+//   self.$buefy.snackbar.open({
+//     duration: 1000,
+//     message: message,
+//     type: type,
+//     position: 'is-top'
+//   })
+// }
+
+
+// export function copy(val) {
+//   if (typeof val === 'object') {
+//     if (val) {
+//       return JSON.parse(JSON.stringify(val))
+//     }
+//   }
+
+//   return null
+// }
+
 export function clone(val) {
   return JSON.parse(JSON.stringify(val))
 }
 
 export function Notification(self, message, type) {
-  self.$snackbar.open({
+  self.$buefy.snackbar.open({
     duration: 1000,
     message: message,
     type: type,
@@ -11,15 +35,20 @@ export function Notification(self, message, type) {
   })
 }
 
+export function Dialog(self, message, type, onConfirm) {
+  self.$dialog.alert({
+    message: message,
+    type: type,
+    position: "is-top",
+    onConfirm: onConfirm
+  });
+}
 
 export function copy(val) {
   if (typeof val === 'object') {
-    if (val) {
-      return JSON.parse(JSON.stringify(val))
-    }
+    return JSON.parse(JSON.stringify(val));
   }
-
-  return null
+  return null;
 }
 
 
