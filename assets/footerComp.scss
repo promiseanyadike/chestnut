@@ -30,6 +30,7 @@
         font-weight: 600;
         padding-bottom:$spacingbottom;
         text-transform: uppercase;
+        color:white;
     }
     &--logo{
         padding-top:90px;
@@ -46,8 +47,16 @@
       font-size: 14px;
       line-height: 28px;
       a{
-          color: #303030;
+          color: white;
       }
     }
 
+}
+
+.is-hidden-mobile{
+	padding: 1.5rem;
+}
+
+.map{
+    padding-top: 5px;
 }

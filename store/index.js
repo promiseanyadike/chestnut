@@ -9,7 +9,7 @@ export const state = () => ({
 
 	hero: {},
 
-	menu: [{
+	menus: [{
 		url: '/',
 		label: 'Home'
 	},
@@ -28,7 +28,7 @@ export const state = () => ({
 	},
 
 	{
-		url: '/contactus',
+		url: '/contact',
 		label: 'Contact us'
 	},
 	{

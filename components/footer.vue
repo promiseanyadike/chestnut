@@ -6,20 +6,7 @@
           <div class="container aboutus">
             <div class="column">
               <div class="has-text-white">about chestnutbolt</div>
-              <div class="about_content has-text-white has-text-left">
-                C&B is currently staffed with a small team of creative engineers and
-                individuals from related fields working either as full time-staffs or
-                contract staffs. These persons are dedicated to the growth of the
-                company and they are very willing to give their best.
-                As innovation, creativity, technical knowledge and personal talent
-                are the major criteria for recruitment. We have laid down a well-
-                defined recruitment method that ensures we get quality personnel in
-                all the area of works the company covers. We ensure that individuals
-                are divided into their area of specialization to guarantee we get the
-                optimal performance from them.
-                Other forms of manpower include Industrial Training students,
-                National youth service corps members and unskilled labour.
-              </div>
+              <div class="about_content has-text-white has-text-left" v-html="aboutPages.content"></div>
               <!-- <div v-html="data.title" class="has-text-white"></div>
               <div v-html="data.content" class="about_content has-text-white has-text-justified"></div>-->
             </div>
@@ -28,7 +15,7 @@
               <div class="social_media">
                 <a href="#" target="_blank" class="has-text-white">
                   <span class="icon f">
-                    <i class="mdi mdi-facebook-box"></i>
+                    <i class="mdi mdi-facebook"></i>
                   </span>
                   facebook
                 </a>
@@ -53,12 +40,34 @@
                   </p>
                 </a>
               </div>
+              <div class="is-hidden-mobile">
+                <div class="footerComp--title">useful links</div>
+                <div>
+                  <ul>
+                    <li>
+                      <nuxt-link to="/" style="color:yellow">Home</nuxt-link>
+                    </li>
+                    <li>
+                      <nuxt-link to="/services" style="color:yellow">Our Services</nuxt-link>
+                    </li>
+                    <li>
+                      <nuxt-link to="/Gallery" style="color:yellow">Gallery</nuxt-link>
+                    </li>
+                    <li>
+                      <nuxt-link to="/about" style="color:yellow">About Us</nuxt-link>
+                    </li>
+                    <li>
+                      <nuxt-link to="/contact" style="color:yellow">Contact</nuxt-link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             <!-- <div class="column">4th column</div> -->
             <div class="column">
               <div class="has-text-white">
                 ChestnutBolt
-                <ul class="has-text-left" style="padding:2rem 0 0 0">
+                <ul class="has-text-left" style="padding:2rem 0 0 0; list-style-type: square;">
                   <li style="padding-bottom: 0.5rem">
                     Applications and System Software Development
                     <br />
@@ -85,26 +94,18 @@
                   </li>
                 </ul>
               </div>
-              <!-- <div class="contact_address">
-                <div class="has-text-white">
-                  <span class="icon f">
-                    <i class="mdi mdi-home"></i>
-                  </span>
-                  <div v-html="contactPages.address" />
-                </div>
-                <div class="has-text-white">
-                  <span class="icon f">
-                    <i class="mdi mdi-phone"></i>
-                  </span>
-                  <div v-html="contactPages.telephone" />
-                </div>
-                <div class="has-text-white">
-                  <span class="icon f">
-                    <i class="mdi mdi-email"></i>
-                  </span>
-                  <div v-html="contactPages.email" />
-                </div>
-              </div>-->
+              <div class="map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.8285990473214!2d5.613329914346017!3d6.416064426184059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10472defc8fe0d77%3A0x5fb6a6011a67a450!2sChestnut%20And%20Bolt!5e0!3m2!1sen!2sng!4v1604286329664!5m2!1sen!2sng"
+                  width="100%"
+                  height="220"
+                  frameborder="0"
+                  style="border:0;"
+                  allowfullscreen
+                  aria-hidden="false"
+                  tabindex="0"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -146,6 +147,7 @@ export default {
 
   computed: {
     ...mapState("contact", ["contactPages"]),
+    ...mapState("abouts", ["aboutPages"]),
   },
 };
 </script>
@@ -209,7 +211,7 @@ css code for footer*/
 }
 
 .about {
-  padding: 2rem 0;
+  padding: 4rem 0;
 }
 
 .container.aboutus {

@@ -10,7 +10,7 @@
       <div class="services is-uppercase is-size-3">Services</div>
       <div class="container">
         <div class="columns is-multiline">
-          <div class="column is-6 box-wrap" v-for=" (areas, i) in service" :key="i">
+          <div class="column is-6 box-wrap" v-for=" (areas, i) in service.slice(6)" :key="i">
             <div
               class="investigateBlock"
               style="background: transparent; box-shadow: 0 0 9px 2px #064e685e"
@@ -21,9 +21,7 @@
                 </span>
               </h4>-->
               <h4 class="never">
-                <span class="icon has-text-warning">
-                  <i style="font-size: 60px" :class="areas.Image.name"></i>
-                </span>
+                <span class="mdi mdi-switch icon has-text-warning" style="font-size: 60px"></span>
               </h4>
               <div
                 class="investigateBlock--title"
@@ -98,6 +96,7 @@
               </div>
 
               <!-- form starts here -->
+              <!-- <div class="formSection is-hidden-mobile"> -->
               <div class="formSection is-hidden-mobile">
                 <span class="formTitle">Enquiry Form</span>
                 <br />
@@ -307,6 +306,7 @@ export default {
         store.dispatch("pages/getGalleryPage"),
         store.dispatch("pages/getContactPage"),
         store.dispatch("contact/getContactInfo"),
+        store.dispatch("abouts/getAboutPage"),
         // store.dispatch("pages/getAboutPage"),
         // store.dispatch("pages/getContactPage"),
       ]);
@@ -319,6 +319,7 @@ export default {
     let service = copy(store.state.service.servicePage);
     let galleryPage = copy(store.state.pages.galleryPage);
     let contactPage = copy(store.state.pages.contactPage);
+    let aboutpage = copy(store.state.abouts.aboutPages);
 
     let contact = copy(store.state.contact.contactPages);
     // console.log(value);
@@ -329,6 +330,8 @@ export default {
       galleryPage,
       contactPage,
       contact,
+      aboutpage,
+
       // contact,
     };
   },
