@@ -1,7 +1,7 @@
 <template>
   <div
     class="billboardComp"
-    :style="{height: param.height, 'background-image': `url(${param.image})`}"
+    :style="{ height: param.height, 'background-image': `url(${param.image})` }"
   >
     <slot />
     <div class="captions">
@@ -20,7 +20,7 @@ export default {
       default() {
         return {
           height: "300px",
-          image: "/img/practicearea.jpg",
+          image: "/img/logo.jpg",
           left: "404",
           right: "",
         };

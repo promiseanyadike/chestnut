@@ -9,14 +9,15 @@
   </div>-->
   <div class="defaultLayout">
     <layout-billboard :param="billboard">
-      <layout-header />
+      <!-- <layout-header /> -->
+      <navbar-menu />
     </layout-billboard>
 
     <div class="defaultLayout_body">
       <nuxt />
     </div>
 
-    <!-- <layout-footer /> -->
+    <layout-footer />
   </div>
 </template>
 
@@ -27,8 +28,9 @@
 //   components: NavbarMenu,
 // };
 import LayoutHeader from "@/components/header";
+import NavbarMenu from "@/components/NavbarMenu";
 import LayoutBillboard from "@/components/billboard";
-// import LayoutFooter from "@/components/footer";
+import LayoutFooter from "@/components/footer";
 
 import { mapState } from "vuex";
 
@@ -36,7 +38,8 @@ export default {
   components: {
     LayoutHeader,
     LayoutBillboard,
-    // LayoutFooter,
+    LayoutFooter,
+    NavbarMenu,
   },
 
   data() {
@@ -59,3 +62,8 @@ export default {
   },
 };
 </script>
+
+
+<style lang="scss">
+@import "~assets/style.scss";
+</style>

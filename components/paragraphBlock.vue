@@ -1,9 +1,13 @@
 <template>
-  <div class="columns is-gapless paragraphBlockComp" :id="id" :class="{reverse: reverse}">
+  <div
+    class="columns is-gapless paragraphBlockComp"
+    :id="id"
+    :class="{ reverse: reverse }"
+  >
     <div class="column">
       <div class="paragraphBlock">
         <h3 class="paragraphBlock--title">{{ title }}</h3>
-        <p class="paragraphBlock--subtitle">{{ subtitle }}</p>
+        <!-- <p class="paragraphBlock--subtitle">{{ subtitle }}</p> -->
         <div class="paragraphBlock--content">
           <div v-html="content" />
         </div>
@@ -11,7 +15,7 @@
     </div>
 
     <div class="column is-hidden-mobile">
-      <div class="paragraphImage" :style="{'background-image': url}" />
+      <div class="paragraphImage" :style="{ 'background-image': url }" />
     </div>
   </div>
 </template>
@@ -23,10 +27,10 @@ export default {
       type: String,
       default: "",
     },
-    subtitle: {
-      type: String,
-      default: "",
-    },
+    // subtitle: {
+    //   type: String,
+    //   default: "",
+    // },
     content: {
       type: String,
       default: "",

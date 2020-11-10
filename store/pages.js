@@ -4,7 +4,8 @@ export const state = () => ({
 	aboutPage: [],
 	contactPage: {},
 	homePage: [],
-	galleryPage: {}
+	galleryPage: {},
+	servicePage: {}
 })
 
 export const mutations = {
@@ -21,6 +22,9 @@ export const mutations = {
 	},
 	setgallerypage(state, data) {
 		state.galleryPage = data
+	},
+	setservicepage(state, data) {
+		state.servicePage = data
 	}
 }
 
@@ -56,6 +60,22 @@ export const actions = {
 			if (req.code == 200) {
 				let page = req.store;
 				commit('setaboutpage', page);
+				return page
+			}
+		} catch (error) {
+			console.log("an error occured", error);
+		}
+	},
+
+	async getAreaPage({ commit }) {
+		try {
+			let id = 4
+			let req = await this.$axios.$get(`api/page/${id}`)
+			if (req.code == 200) {
+				let page = req.store.page.attributes.carousel
+				console.log(page);
+				commit('setservicepage', page);
+				console.log(page)
 				return page
 			}
 		} catch (error) {

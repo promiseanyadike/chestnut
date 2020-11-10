@@ -10,7 +10,11 @@
       <div class="services is-uppercase is-size-3">Services</div>
       <div class="container">
         <div class="columns is-multiline">
-          <div class="column is-6 box-wrap" v-for=" (areas, i) in service.slice(6)" :key="i">
+          <div
+            class="column is-6 box-wrap"
+            v-for="(areas, i) in service"
+            :key="i"
+          >
             <div
               class="investigateBlock"
               style="background: transparent; box-shadow: 0 0 9px 2px #064e685e"
@@ -21,14 +25,20 @@
                 </span>
               </h4>-->
               <h4 class="never">
-                <span class="mdi mdi-switch icon has-text-warning" style="font-size: 60px"></span>
+                <span
+                  class="mdi mdi-switch icon has-text-warning"
+                  style="font-size: 60px"
+                ></span>
               </h4>
               <div
                 class="investigateBlock--title"
-                style="text-align:center; padding-bottom:1rem"
+                style="text-align: center; padding-bottom: 1rem"
                 v-html="areas.Title"
               ></div>
-              <div class="investigateBlock--content" v-html="areas.Content"></div>
+              <div
+                class="investigateBlock--content"
+                v-html="areas.Content"
+              ></div>
             </div>
           </div>
         </div>
@@ -37,9 +47,15 @@
 
     <section
       class="dark"
-      :style="{'background-image': `linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(${galleryPage.page.attributes.image.banner_image.data})`}"
+      :style="{
+        'background-image': `linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(${galleryPage.page.attributes.image.banner_image.data})`,
+      }"
     >
-      <div class="container" v-if="galleryImages.length > 0" style="padding: 2rem 0">
+      <div
+        class="container"
+        v-if="galleryImages.length > 0"
+        style="padding: 2rem 0"
+      >
         <!-- <div class="container"> -->
         <div class="is-uppercase is-size-3">GALLERY</div>
         <div class="columns is-gapless">
@@ -48,20 +64,27 @@
               <div :style="{'background-image': `url(${event.image.data})`}" class="event" />
             </a>
           </div>-->
-          <div class="column" v-for="event in gallery.slice(0,4)" :key="event.id">
+          <div
+            class="column"
+            v-for="event in gallery.slice(0, 4)"
+            :key="event.id"
+          >
             <div
-              :style="{'background-image': `url(${event.media_url})`}"
+              :style="{ 'background-image': `url(${event.media_url})` }"
               class="event"
-              v-show="event.media_type =='CAROUSEL_ALBUM' || event.media_type =='IMAGE'"
+              v-show="
+                event.media_type == 'CAROUSEL_ALBUM' ||
+                event.media_type == 'IMAGE'
+              "
             />
-            <video v-show="event.media_type =='VIDEO'" height="280" controls>
+            <video v-show="event.media_type == 'VIDEO'" height="280" controls>
               <source :src="event.media_url" type="video/mp4" />
             </video>
           </div>
         </div>
         <div class="has-text-right view-more">
           <nuxt-link to="/gallery">
-            <h1 class="content heading" style="color: yellow;">MORE</h1>
+            <h1 class="content heading" style="color: yellow">MORE</h1>
           </nuxt-link>
         </div>
       </div>
@@ -70,7 +93,9 @@
     <!-- contact starts here -->
     <div
       class="footerContact"
-      :style="{'background-image': `linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(${contactPage.page.attributes.image.data})`}"
+      :style="{
+        'background-image': `linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(${contactPage.page.attributes.image.data})`,
+      }"
     >
       <div class="container">
         <div class="contactBox">
@@ -103,7 +128,7 @@
                 <br />
                 <b-field
                   label
-                  :type="errors.has('name') ? 'is-danger': ''"
+                  :type="errors.has('name') ? 'is-danger' : ''"
                   :message="errors.first('name')"
                 >
                   <b-input
@@ -116,7 +141,7 @@
 
                 <b-field
                   label
-                  :type="errors.has('email') ? 'is-danger': ''"
+                  :type="errors.has('email') ? 'is-danger' : ''"
                   :message="errors.first('email')"
                 >
                   <b-input
@@ -129,8 +154,10 @@
 
                 <b-field
                   label
-                  :type="errors.has('phone_no') ? 'is-danger': ''"
-                  :message="errors.has('phone_no') ? errors.first('phone_no') : ''"
+                  :type="errors.has('phone_no') ? 'is-danger' : ''"
+                  :message="
+                    errors.has('phone_no') ? errors.first('phone_no') : ''
+                  "
                 >
                   <b-input
                     placeholder="Phone Number"
@@ -143,7 +170,7 @@
 
                 <b-field
                   label
-                  :type="errors.has('subject') ? 'is-danger': ''"
+                  :type="errors.has('subject') ? 'is-danger' : ''"
                   :message="errors.first('subject')"
                 >
                   <b-input
@@ -156,7 +183,7 @@
 
                 <b-field
                   label
-                  :type="errors.has('message') ? 'is-danger': ''"
+                  :type="errors.has('message') ? 'is-danger' : ''"
                   :message="errors.first('message')"
                 >
                   <b-input
@@ -169,7 +196,9 @@
                 </b-field>
 
                 <div>
-                  <button class="button is-link" @click="sendEnquiry">Submit</button>
+                  <button class="button is-link" @click="sendEnquiry">
+                    Submit
+                  </button>
                 </div>
               </div>
               <!-- form ends here -->
