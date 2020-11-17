@@ -77,7 +77,7 @@
                 event.media_type == 'IMAGE'
               "
             />
-            <video v-show="event.media_type == 'VIDEO'" height="280" controls>
+            <video v-show="event.media_type == 'VIDEO'" controls>
               <source :src="event.media_url" type="video/mp4" />
             </video>
           </div>
@@ -345,7 +345,7 @@ export default {
     }
 
     let value = copy(store.state.pages.homePage);
-    let service = copy(store.state.service.servicePage);
+    let service = copy(store.state.service.areaPage);
     let galleryPage = copy(store.state.pages.galleryPage);
     let contactPage = copy(store.state.pages.contactPage);
     let aboutpage = copy(store.state.abouts.aboutPages);

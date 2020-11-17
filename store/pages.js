@@ -1,7 +1,7 @@
 export const state = () => ({
 	homePage: {},
-	aboutPage: {},
-	aboutPage: [],
+	AboutPage: {},
+	aboutPages: [],
 	contactPage: {},
 	homePage: [],
 	galleryPage: {},
@@ -15,7 +15,7 @@ export const mutations = {
 	},
 
 	setaboutpage(state, data) {
-		state.aboutPage = data
+		state.AboutPage = data
 	},
 	setcontactpage(state, data) {
 		state.contactPage = data
@@ -55,10 +55,10 @@ export const actions = {
 
 	async getAboutPage({ commit }) {
 		try {
-			let id = 2
+			let id = 5
 			let req = await this.$axios.$get(`api/page/${id}`)
 			if (req.code == 200) {
-				let page = req.store;
+				let page = req.store.page.attributes.header;
 				commit('setaboutpage', page);
 				return page
 			}
@@ -72,7 +72,7 @@ export const actions = {
 			let id = 4
 			let req = await this.$axios.$get(`api/page/${id}`)
 			if (req.code == 200) {
-				let page = req.store.page.attributes.carousel
+				let page = req.store.page.attributes.header
 				console.log(page);
 				commit('setservicepage', page);
 				console.log(page)

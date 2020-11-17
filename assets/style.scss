@@ -219,6 +219,8 @@ h1 {
 
 .homePage {
   // background-image: url(/img/backgroundp1.png);
+  background-image: url("/img/full-bloom.png");
+
 
 
   .paragraphBlock {
@@ -1253,7 +1255,8 @@ h1 {
 
 .event {
   // object-fit: cover;
-  height: 300px;
+  height: 400px;
+  // height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1274,3 +1277,8 @@ h1 {
 // ul {
 //   list-style-type: square;
 // }
+
+.gallery-image {
+  height: 400px;
+  width: 100%;
+}

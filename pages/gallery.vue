@@ -1,20 +1,43 @@
 <template>
   <div>
-    <div class="grey-bg banner box-shadow">
+    <!-- <div class="grey-bg banner box-shadow">
       <h1 class="title has-text-centered is-size-4-mobile">{{ value.header }}</h1>
-    </div>
+    </div> -->
     <section class="section dark">
       <div class="container">
         <div class="columns is-multiline">
-          <div class="column is-one-third" v-for="image in paginatedItems()" :key="image.id">
-            <a
+          <div
+            class="column is-one-third"
+            v-for="image in paginatedItems()"
+            :key="image.id"
+          >
+            <!-- <a
               :href="image.media_url"
               target="_blank"
-              v-show="image.media_type =='CAROUSEL_ALBUM' || image.media_type =='IMAGE'"
+              v-show="
+                image.media_type == 'CAROUSEL_ALBUM' ||
+                image.media_type == 'IMAGE'
+              "
             >
-              <div :style="{'background-image': `url(${image.media_url})`}" class="gallery-image" />
-            </a>
-            <video v-show="image.media_type =='VIDEO'" height="280" controls class="gallery-image">
+              <div
+                :style="{ 'background-image': `url(${image.media_url})` }"
+                class="gallery-image"
+              />
+            </a> -->
+            <div
+              :style="{ 'background-image': `url(${image.media_url})` }"
+              class="event"
+              v-show="
+                image.media_type == 'CAROUSEL_ALBUM' ||
+                image.media_type == 'IMAGE'
+              "
+            />
+
+            <video
+              v-show="image.media_type == 'VIDEO'"
+              controls
+              class="gallery-image"
+            >
               <source :src="image.media_url" type="video/mp4" />
             </video>
           </div>
@@ -39,43 +62,55 @@ import { copy } from "@/utils/helpers";
 import { mapState } from "vuex";
 
 export default {
-  layout: "home",
-  head() {
-    return {
-      title: "Gallery",
-      meta: [
-        {
-          property: "og:title",
-          content: this.value.header,
-        },
-        {
-          property: "og:url",
-          content: "https://www.splashfm1055.com/gallery",
-        },
-        {
-          property: "og:image",
-          content: "https://www.splashfm1055.com/img/logo.png",
-        },
-      ],
-    };
-  },
+  // head() {
+  //   return {
+  //     title: "Gallery",
+  //     meta: [
+  //       {
+  //         property: "og:title",
+  //         content: this.value.header,
+  //       },
+  //       {
+  //         property: "og:url",
+  //         content: "https://www.splashfm1055.com/gallery",
+  //       },
+  //       {
+  //         property: "og:image",
+  //         content: "https://www.splashfm1055.com/img/logo.png",
+  //       },
+  //     ],
+  //   };
+  // },
   async asyncData({ store }) {
-    let param = { page: 1, offset: 9 };
+    // let param = { page: 1, offset: 9 };
     let c = await Promise.all([
-      store.dispatch("pages/getPage", 2),
+      store.dispatch("pages/getGalleryPage", 2),
       // store.dispatch("gallery/getGallery", param),
       store.dispatch("gallery/getInstagramGallery"),
-      store.dispatch("gallery/getCount"),
+      // store.dispatch("gallery/getCount"),
+      store.dispatch("abouts/getAboutPage"),
     ]);
     console.log(c);
-    let value = copy(store.state.pages.galleryPage.attributes);
+
+    let data = {
+      image: store.state.pages.galleryPage.page.attributes.header.image.data,
+      height: "400px",
+      right: "",
+      left: store.state.pages.galleryPage.page.attributes.header.title,
+    };
+    console.log(data);
+
+    store.dispatch("setBillboard", data);
+
+    let value = copy(store.state.pages.galleryPage);
     // let total = store.state.gallery.count;
     let total = store.state.gallery.gallery.length;
     let instagram_total = store.state.gallery.gallery;
     console.log(total);
     console.log(value);
 
-    return { value, total, instagram_total };
+    // return { value, total, instagram_total };
+    return { data, total, instagram_total };
   },
 
   created() {

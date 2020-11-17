@@ -27,6 +27,7 @@ export default {
       let x = await Promise.all([
         store.dispatch("pages/getAreaPage"),
         store.dispatch("service/getServicePage"),
+        store.dispatch("abouts/getAboutPage"),
       ]);
       console.log(x);
 

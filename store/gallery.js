@@ -60,17 +60,17 @@ export const actions = {
 		}
 	},
 
-	async getCount({ commit }) {
-		try {
-			let { data } = await this.$axios.get(`api/gallery/count`);
-			if (data.code == 200) {
-				let count = data.store.count;
-				commit('setCount', count);
-			}
-		} catch (error) {
-			console.log("An error occured", error);
-		}
-	},
+	// async getCount({ commit }) {
+	// 	try {
+	// 		let { data } = await this.$axios.get(`api/gallery/count`);
+	// 		if (data.code == 200) {
+	// 			let count = data.store.count;
+	// 			commit('setCount', count);
+	// 		}
+	// 	} catch (error) {
+	// 		console.log("An error occured", error);
+	// 	}
+	// },
 
 	async getImage({ commit }, id) {
 		try {

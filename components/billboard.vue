@@ -1,7 +1,10 @@
 <template>
   <div
     class="billboardComp"
-    :style="{ height: param.height, 'background-image': `url(${param.image})` }"
+    :style="{
+      height: param.height,
+      'background-image': ` linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(${param.image})`,
+    }"
   >
     <slot />
     <div class="captions">
