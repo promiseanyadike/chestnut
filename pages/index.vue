@@ -1,10 +1,10 @@
 <template>
   <div class="homePage">
     <paragraph-block
-      :title="value.page.attributes.pages.title"
-      :subtitle="value.page.attributes.pages.subtitle"
-      :content="value.page.attributes.pages.content"
-      :image="value.page.attributes.pages.image.data"
+      :title="value.page.attributes.header.title"
+      :subtitle="value.page.attributes.header.subtitle"
+      :content="value.page.attributes.header.content"
+      :image="value.page.attributes.header.image.data"
     />
     <section class="second_section">
       <div class="services is-uppercase is-size-3">Services</div>
@@ -26,7 +26,7 @@
               </h4>-->
               <h4 class="never">
                 <span
-                  class="mdi mdi-switch icon has-text-warning"
+                  class="mdi mdi-switch icon has-text-info"
                   style="font-size: 60px"
                 ></span>
               </h4>
@@ -48,7 +48,7 @@
     <section
       class="dark"
       :style="{
-        'background-image': `linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(${galleryPage.page.attributes.image.banner_image.data})`,
+        'background-image': `linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(${this.galleryPage.page.attributes.header.image.data})`,
       }"
     >
       <div
@@ -94,7 +94,7 @@
     <div
       class="footerContact"
       :style="{
-        'background-image': `linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(${contactPage.page.attributes.image.data})`,
+        'background-image': `linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(${contactPage.page.attributes.header.image.data})`,
       }"
     >
       <div class="container">
