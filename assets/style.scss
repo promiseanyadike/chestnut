@@ -1282,3 +1282,24 @@ h1 {
   height: 400px;
   width: 100%;
 }
+
+.about-us {
+  width: 90%;
+  font-size: 18px;
+  margin: 0 auto;
+}
+
+.about-header {
+  font-size: 3.4em !important;
+  font-family: 'Mrs Saint Delafield';
+  font-weight: 400;
+}
+.img-center {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.image-rounded{
+  object-fit: cover;
+}

@@ -77,7 +77,11 @@
                 event.media_type == 'IMAGE'
               "
             />
-            <video v-show="event.media_type == 'VIDEO'" controls>
+            <video
+              v-show="event.media_type == 'VIDEO'"
+              controls
+              class="gallery-image"
+            >
               <source :src="event.media_url" type="video/mp4" />
             </video>
           </div>
