@@ -1,0 +1,32 @@
+.main-section.hide-menu {
+    margin-left: 50px;
+  }
+  
+.main-section {
+  margin-left: 160px;
+  margin-right: 50px;
+  margin-top: 130px;
+  margin-bottom: 30px;
+	transition: margin-left 0.3s
+}
+
+.col {
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	 h1 {
+		 font-size: 30px;
+	 }	
+}
+.seperator {
+	border-bottom: 1px solid #d7d7d7;
+	margin-bottom: 2rem !important;
+}
+
+.home_page {
+	padding: 8rem;
+}
+
+.home_field {
+	padding: 8rem 10rem 0 ;
+}
