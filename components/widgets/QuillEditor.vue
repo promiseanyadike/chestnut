@@ -4,18 +4,23 @@
       :value="value"
       :disabled="disabled"
       @change="handleInput($event)"
-      placeholder=""
+      placeholder
       :options="editorOption"
     />
   </div>
 </template>
 
 <script>
-import QuillEditor from "@/components/widgets/QuillEditor.vue";
+import "quill/dist/quill.core.css";
+import "quill/dist/quill.snow.css";
+import "quill/dist/quill.bubble.css";
+
+import { quillEditor } from "vue-quill-editor";
 
 export default {
-  components: { QuillEditor },
-
+  components: {
+    quillEditor,
+  },
   props: {
     disabled: {
       type: Boolean,
@@ -37,12 +42,7 @@ export default {
     return {
       editorOption: {
         modules: {
-          toolbar: [
-            ["bold", "italic", "underline", "strike"],
-            [{ list: "ordered" }, { list: "bullet" }],
-            [{ header: 1 }, { header: 2 }],
-            [{ color: [] }],
-          ],
+          toolbar: [["bold", "italic", "underline", "strike"], ["clean"]],
         },
       },
       data: "",
@@ -65,5 +65,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

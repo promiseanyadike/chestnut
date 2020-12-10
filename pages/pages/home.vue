@@ -39,7 +39,7 @@
         :message="errors.first('header')"
       >
         <quill-editor
-          v-model="value.attributes.carousel[0].title"
+          v-model="value.attributes.carousel[0].content"
           :class="
             edit
               ? 'quill_disabled'
@@ -66,7 +66,7 @@
         :message="errors.first('header')"
       >
         <quill-editor
-          v-model="value.attributes.carousel[1].title"
+          v-model="value.attributes.carousel[1].content"
           :class="
             edit
               ? 'quill_disabled'
@@ -93,7 +93,7 @@
         :message="errors.first('header')"
       >
         <quill-editor
-          v-model="value.attributes.carousel[2].title"
+          v-model="value.attributes.carousel[2].content"
           :class="
             edit
               ? 'quill_disabled'
