@@ -14,14 +14,14 @@
           <button class="button is-danger">Cancel</button>
         </nuxt-link>
         <button
-          class="button create-button edit-button"
+          class="button create-button edit-button has-background-grey-light"
           v-if="edit"
           @click="toggleEdit"
         >
           Edit
         </button>
         <button
-          class="button create-button save-button"
+          class="button create-button save-button is-success"
           :class="loading"
           @click="save"
           v-if="!edit"
@@ -33,7 +33,7 @@
 
     <div>
       <b-field
-        label="Carousel Content"
+        label="Carousel Title 1"
         custom-class="is-small"
         :type="errors.has('header') ? 'is-danger' : ''"
         :message="errors.first('header')"
@@ -55,12 +55,12 @@
       <image-upload
         v-model="value.attributes.carousel[0].image"
         @image="isImageValid($event)"
-        label="Banner Image (1368 x 508)"
+        label="Banner Image 1 (1368 x 508)"
         :readonly="edit"
       />
 
       <b-field
-        label="Carousel Content"
+        label="Carousel Title 2"
         custom-class="is-small"
         :type="errors.has('header') ? 'is-danger' : ''"
         :message="errors.first('header')"
@@ -82,12 +82,12 @@
       <image-upload
         v-model="value.attributes.carousel[1].image"
         @image="isImageValid1($event)"
-        label="Banner Image (1368 x 508)"
+        label="Banner Image 2 (1368 x 508)"
         :readonly="edit"
       />
 
       <b-field
-        label="Carousel Content"
+        label="Carousel Title 3"
         custom-class="is-small"
         :type="errors.has('header') ? 'is-danger' : ''"
         :message="errors.first('header')"
@@ -109,7 +109,54 @@
       <image-upload
         v-model="value.attributes.carousel[2].image"
         @image="isImageValid2($event)"
-        label="Banner Image (1368 x 508)"
+        label="Banner Image 3"
+        :readonly="edit"
+      />
+
+      <b-field
+        label="Header Title"
+        custom-class="is-small"
+        :type="errors.has('header') ? 'is-danger' : ''"
+        :message="errors.first('header')"
+      >
+        <quill-editor
+          v-model="value.attributes.header.title"
+          :class="
+            edit
+              ? 'quill_disabled'
+              : 'quill-editor is-disabled ql-container ql-snow ql-disabled'
+          "
+          :disabled="edit"
+          name="header"
+          placeholder="Header Content"
+          v-validate="'required'"
+        />
+      </b-field>
+
+      <b-field
+        label="Header Content"
+        custom-class="is-small"
+        :type="errors.has('header') ? 'is-danger' : ''"
+        :message="errors.first('header')"
+      >
+        <quill-editor
+          v-model="value.attributes.header.content"
+          :class="
+            edit
+              ? 'quill_disabled'
+              : 'quill-editor is-disabled ql-container ql-snow ql-disabled'
+          "
+          :disabled="edit"
+          name="header"
+          placeholder="Header Content"
+          v-validate="'required'"
+        />
+      </b-field>
+
+      <image-upload
+        v-model="value.attributes.header.image"
+        @image="isImageValid3($event)"
+        label="Banner Image 3"
         :readonly="edit"
       />
 
@@ -291,14 +338,6 @@ export default {
       isImage1: false,
       isImage2: false,
       isImage3: false,
-      isImage4: false,
-      isImage5: false,
-      isImage6: false,
-      isImage7: false,
-      isImage8: false,
-      isImage9: false,
-      isImage10: false,
-      isImage11: false,
     };
   },
 
@@ -351,45 +390,9 @@ export default {
     isImageValid3(validity) {
       this.isImage3 = validity;
     },
-    isImageValid4(validity) {
-      this.isImage3 = validity;
-    },
-    isImageValid5(validity) {
-      this.isImage3 = validity;
-    },
-    isImageValid6(validity) {
-      this.isImage3 = validity;
-    },
-    isImageValid7(validity) {
-      this.isImage3 = validity;
-    },
-    isImageValid8(validity) {
-      this.isImage3 = validity;
-    },
-    isImageValid9(validity) {
-      this.isImage3 = validity;
-    },
-    isImageValid10(validity) {
-      this.isImage3 = validity;
-    },
-    isImageValid11(validity) {
-      this.isImage3 = validity;
-    },
 
     async save() {
-      if (
-        !this.isImage &&
-        !this.isImage1 &&
-        !this.isImage2 &&
-        !this.isImage3 &&
-        !this.isImage5 &&
-        !this.isImage6 &&
-        !this.isImage7 &&
-        !this.isImage8 &&
-        !this.isImage9 &&
-        !this.isImage10 &&
-        !this.isImage11
-      ) {
+      if (!this.isImage && !this.isImage1 && !this.isImage2 && !this.isImage3) {
         this.$buefy.snackbar.open({
           message: "Please Upload an Image.",
           type: "is-danger",
