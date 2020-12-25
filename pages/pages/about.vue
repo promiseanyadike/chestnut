@@ -14,7 +14,7 @@
           <button class="button is-danger">Cancel</button>
         </nuxt-link>
         <button
-          class="button create-button edit-button has-background-grey-light"
+          class="button create-button edit-button has-background-grey-light has-text-white"
           v-if="edit"
           @click="toggleEdit"
         >

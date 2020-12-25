@@ -2,11 +2,11 @@
   <div class="page_unit">
     <div class="columns">
       <div class="column">
-        <h1 class="general-info-heading">Service Area Information</h1>
+        <h1 class="general-info-heading">About Page Information</h1>
       </div>
       <div class="column has-text-right">
         <button
-          class="button create-button edit-button has-text-white has-background-grey"
+          class="button create-button edit-button has-background-grey has-text-white"
           v-if="edit"
           @click="toggleEdit"
         >
@@ -41,7 +41,7 @@
       >
         <b-input
           :disabled="edit"
-          v-model="value.Title"
+          v-model="value.title"
           expanded
           name="title"
           placeholder="Title"
@@ -64,12 +64,12 @@
           :disabled="edit"
           name="content"
           v-validate="'required'"
-          v-model="value.Content"
+          v-model="value.content"
         />
       </b-field>
 
       <image-upload
-        v-model="value.Image"
+        v-model="value.image"
         label="Image"
         @image="isImageValid($event)"
         :readonly="edit"
@@ -93,7 +93,7 @@ export default {
       pageInfo: {
         title: "View Practice",
         show: true,
-        link: "/services",
+        link: "/about",
       },
       edit: true,
       loading: "",
@@ -102,9 +102,9 @@ export default {
   },
 
   async asyncData({ store, params }) {
-    await store.dispatch("service/getPracticeArea", params.id);
+    await store.dispatch("about/getPracticeArea", params.id);
 
-    let value = copy(store.state.service.practice);
+    let value = copy(store.state.about.practice);
 
     return { value };
   },
@@ -114,7 +114,7 @@ export default {
   },
 
   computed: {
-    ...mapState("service", ["practice"]),
+    ...mapState("about", ["practice"]),
     ...mapState(["editAccess"]),
   },
 
@@ -136,22 +136,22 @@ export default {
       if (result) {
         this.loading = "is-loading";
         let data = _.extend({}, this.value);
-        let res = await this.$store.dispatch("service/editPractice", {
+        let res = await this.$store.dispatch("about/editPractice", {
           params: data,
-          id: data.ID,
+          id: data.id,
         });
         if (res == 1) {
           this.$buefy.snackbar.open({
-            message: "Successfully Edited Practice Area.",
+            message: "Successfully Edited Content.",
             type: "is-success",
             position: "is-top",
           });
           this.loading = "";
-          setTimeout(() => this.$router.push("/services"), 1000);
+          setTimeout(() => this.$router.push("/about"), 1000);
           return;
         }
         this.$buefy.snackbar.open({
-          message: "Error Editing Practice Area.",
+          message: "Error Editing Content.",
           type: "is-danger",
           position: "is-top",
         });

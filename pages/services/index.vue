@@ -21,7 +21,7 @@
 
           <b-table-column label="Our Services" v-slot:default="props">
             <nuxt-link :to="'/services/' + props.row.id">{{
-              props.row.title
+              props.row.Title
             }}</nuxt-link>
           </b-table-column>
 
@@ -74,6 +74,7 @@ export default {
         title: "Services",
         show: false,
       },
+
       deleteInfo: {
         title: "Delete Service",
         text: "Are you sure you want to delete this service?",
@@ -128,6 +129,7 @@ export default {
                 type: "is-success",
                 position: "is-top",
               });
+              setTimeout(() => this.$router.push("/services"), 1000);
               return;
             }
             this.$buefy.snackbar.open({

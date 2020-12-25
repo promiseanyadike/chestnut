@@ -31,7 +31,7 @@
       <div class="column is-4">
         <!-- <pie-chart/> -->
         <div class="admin_header">
-          <i>Chestnut and Bolts</i>
+          <i>Chestnut and Bolt Technology</i>
           <p><i>content managment system</i></p>
         </div>
       </div>

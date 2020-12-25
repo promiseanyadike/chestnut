@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page_unit">
     <h1 class="general-info-heading">Contact Information</h1>
 
     <div>
@@ -31,6 +31,22 @@
           expanded
           name="email"
           placeholder="Email"
+          v-validate="'required'"
+        />
+      </b-field>
+
+      <b-field
+        label="Phone No"
+        custom-class="is-small"
+        :type="errors.has('phone') ? 'is-danger' : ''"
+        :message="errors.first('phone')"
+      >
+        <b-input
+          :disabled="edit"
+          v-model="value.phone_no"
+          expanded
+          name="phone No"
+          placeholder="Phone No"
           v-validate="'required'"
         />
       </b-field>

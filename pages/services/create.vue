@@ -42,7 +42,7 @@
 
     <div class="create-button-space">
       <button
-        class="button create-button is-fullwidth is-info"
+        class="button create-button is-fullwidth has-background-grey has-text-white"
         :class="loading"
         @click="createPracticeArea"
       >

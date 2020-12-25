@@ -16,25 +16,25 @@
         </li>
         <li>
           <nuxt-link to="/services">
-            <i class="mdi mdi-home" />
+            <i class="mdi mdi-lightbulb-group" />
             Services
           </nuxt-link>
         </li>
-        <li>
+        <!-- <li>
           <nuxt-link to="/gallery">
             <i class="mdi mdi-home" />
             Gallery
           </nuxt-link>
-        </li>
+        </li> -->
         <li>
           <nuxt-link to="/about">
-            <i class="mdi mdi-newspaper" />
+            <i class="mdi mdi-account" />
             About
           </nuxt-link>
         </li>
         <li>
           <nuxt-link to="/contact">
-            <i class="mdi mdi-monitor" />
+            <i class="mdi mdi-phone" />
             Contacts
           </nuxt-link>
         </li>

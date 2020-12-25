@@ -38,7 +38,7 @@ export const actions = {
 		try {
 			let {
 				data
-			} = await this.$axios.get('api/area')
+			} = await this.$axios.get('api/about')
 			if (data.code == 200) {
 				let list = data.store.list
 				commit('setPracticeAreas', list)
@@ -54,42 +54,10 @@ export const actions = {
 		try {
 			let {
 				data
-			} = await this.$axios.get(`api/area/${id}`)
+			} = await this.$axios.get(`api/about/${id}`)
 			if (data.code == 200) {
-				let practice = data.store.Service
+				let practice = data.store.About
 				commit("setPractice", practice)
-			}
-		} catch (error) {
-			console.log("An error occured", error)
-		}
-	},
-
-	async createPracticeArea({
-		commit
-	}, params) {
-		try {
-			let {
-				data
-			} = await this.$axios.post('api/area', params)
-			if (data.code == 200) {
-				commit('addPracticeArea', params)
-				return 1
-			}
-		} catch (error) {
-			console.log("An error occured", error)
-		}
-	},
-
-	async deletePractice({
-		commit
-	}, id) {
-		try {
-			let {
-				data
-			} = await this.$axios.delete(`api/area/${id}`)
-			if (data.code == 200) {
-				commit('deletePractice', id)
-				return 1
 			}
 		} catch (error) {
 			console.log("An error occured", error)
@@ -105,7 +73,7 @@ export const actions = {
 		try {
 			let {
 				data
-			} = await this.$axios.post(`api/area/${id}`, params)
+			} = await this.$axios.post(`api/about/${id}`, params)
 			if (data.code == 200) {
 				commit('setPractice', params)
 				return 1

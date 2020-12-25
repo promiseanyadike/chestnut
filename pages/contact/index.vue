@@ -1,36 +1,48 @@
 <template>
-  <div>
+  <div class="page_unit">
     <b-table :data="contacts">
-      <template slot-scope="props">
-        <b-table-column label="#" field="#" width="50" centered>
+      <template>
+        <b-table-column label="#" field="#" width="50" centered v-slot="props">
           {{ props.index + 1 }}
         </b-table-column>
 
-        <b-table-column label="Name">
+        <b-table-column label="Name" v-slot:default="props">
           <nuxt-link :to="'/contact/' + props.row.id">{{
             props.row.name
           }}</nuxt-link>
         </b-table-column>
 
-        <b-table-column label="Email">
+        <b-table-column label="Email" v-slot:default="props">
           <nuxt-link :to="'/contact/' + props.row.id">{{
             props.row.email
           }}</nuxt-link>
         </b-table-column>
 
-        <b-table-column label="Subject">
+        <b-table-column label="Phone No" v-slot:default="props">
+          <nuxt-link :to="'/contact/' + props.row.id">{{
+            props.row.phone_no
+          }}</nuxt-link>
+        </b-table-column>
+
+        <b-table-column label="Subject" v-slot:default="props">
           <nuxt-link :to="'/contact/' + props.row.id">{{
             props.row.subject
           }}</nuxt-link>
         </b-table-column>
 
-        <b-table-column label="Date">
+        <b-table-column label="Message" v-slot:default="props">
+          <nuxt-link :to="'/contact/' + props.row.id">{{
+            props.row.message
+          }}</nuxt-link>
+        </b-table-column>
+
+        <b-table-column label="Date" v-slot:default="props">
           <nuxt-link :to="'/contact/' + props.row.id">{{
             formatDate(props.row.date)
           }}</nuxt-link>
         </b-table-column>
 
-        <b-table-column label=" " class="has-text-right">
+        <b-table-column label=" " class="has-text-right" v-slot:default="props">
           <nuxt-link
             :to="'/contact/' + props.row.id"
             class="mdi mdi-eye icobtn"
@@ -39,7 +51,6 @@
           <a
             @click.prevent="deleteContact(props.row.id)"
             href="#"
-            v-if="editAccess"
             class="mdi mdi-delete icobtn"
           />
         </b-table-column>
@@ -70,6 +81,7 @@ export default {
         title: "Contacts",
         show: false,
       },
+
       deleteInfo: {
         title: "Delete Contact",
         text: "Are you sure you want to delete this enquiry?",
@@ -100,7 +112,7 @@ export default {
     },
 
     async deleteContact(id) {
-      this.$modal.open({
+      this.$buefy.modal.open({
         hasModalCard: true,
         parent: this,
         component: DeleteModal,
@@ -111,15 +123,17 @@ export default {
           send: async (data) => {
             let res = await this.$store.dispatch("contacts/deleteContact", id);
             if (res == 1) {
-              this.$snackbar.open({
+              this.$buefy.snackbar.open({
                 message: "Successfully Deleted Contact.",
                 type: "is-success",
                 position: "is-top",
               });
+              setTimeout(() => this.$router.push("/contact"), 1000);
+
               return;
             }
-            this.$snackbar.open({
-              message: "Error Deleting Contact.",
+            this.$buefy.snackbar.open({
+              message: "Error ---Content already Deleted.",
               type: "is-danger",
               position: "is-top",
             });
