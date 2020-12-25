@@ -6,7 +6,7 @@
   >
     <div class="column">
       <div class="paragraphBlock">
-        <h3 class="paragraphBlock--title">{{ title }}</h3>
+        <h3 class="paragraphBlock--title" v-html="title"></h3>
         <!-- <p class="paragraphBlock--subtitle">{{ subtitle }}</p> -->
         <div class="paragraphBlock--content">
           <div v-html="content" />

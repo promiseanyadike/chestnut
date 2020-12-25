@@ -6,11 +6,15 @@
         <div class="contactBlock">
           <div class="leftText">
             <span class="contactTitle"> Address </span>
-            <span v-html="contact.address" />
+            <span v-html="contact.page.attributes.contact.address" />
             <span class="emailDetails">
-              <p><strong>Email:</strong> <span v-html="contact.email" /></p>
               <p>
-                <strong>Telephone:</strong> <span v-html="contact.telephone" />
+                <strong>Email:</strong>
+                <span v-html="contact.page.attributes.contact.email" />
+              </p>
+              <p>
+                <strong>Telephone:</strong>
+                <span v-html="contact.page.attributes.contact.telephone" />
               </p>
               <!-- <p><strong>Fax:</strong> <span v-html="contactPage.fax" /> </p> -->
             </span>
@@ -181,8 +185,6 @@ export default {
       store.dispatch("pages/getContactPage"),
       store.dispatch("contact/getContactInfo"),
       store.dispatch("abouts/getAboutPage"),
-      // store.dispatch("snippets/getScripts"),
-      // store.dispatch("snippets/getNoScripts")
     ]);
     let data = {
       image: store.state.pages.contactPage.page.attributes.header.image.data,
@@ -193,7 +195,7 @@ export default {
 
     store.commit("setBillboard", data);
 
-    let contact = copy(store.state.contact.contactPages);
+    let contact = copy(store.state.pages.contactPage);
 
     return { data, contact };
   },

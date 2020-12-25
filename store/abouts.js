@@ -15,7 +15,7 @@ export const mutations = {
 		let newData = data;
 		let x = data.find(f => f.id === 0);
 		if (!(x == null)) {
-			newData.splice(newData.indexOf(x), 1);
+			newData.splice(newData.indexOf(x), 0);
 			state.allFirmPage = newData
 		}
 		else {
