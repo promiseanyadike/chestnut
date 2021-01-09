@@ -20,7 +20,7 @@
           </b-table-column>
 
           <b-table-column label="Our Services" v-slot:default="props">
-            <nuxt-link :to="'/services/' + props.row.id">{{
+            <nuxt-link :to="'/services/' + props.row.ID">{{
               props.row.Title
             }}</nuxt-link>
           </b-table-column>

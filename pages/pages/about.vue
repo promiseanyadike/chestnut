@@ -168,6 +168,6 @@ export default {
 
 <style>
 p {
-  padding-bottom: 3rem;
+  padding-bottom: 0.75rem;
 }
 </style>

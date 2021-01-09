@@ -22,7 +22,7 @@
         </button>
 
         <button
-          class="button create-button save-button is-info"
+          class="button create-button save-button is-primary"
           :class="loading"
           @click="editPractice"
           v-if="!edit"

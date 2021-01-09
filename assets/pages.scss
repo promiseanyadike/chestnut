@@ -26,6 +26,10 @@
 
 .home_page {
 	padding: 8rem;
+	i {
+		display: flex;
+		justify-content: space-around;
+	}
 }
 
 .home_field {

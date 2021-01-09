@@ -20,6 +20,19 @@
         />
       </b-field>
 
+      <!-- <b-field
+        label="Title"
+        custom-class="is-small"
+        :type="errors.has('title') ? 'is-danger' : ''"
+        :message="errors.first('title')"
+      >
+        <quill-editor
+          v-model="form.title"
+          v-validate="'required'"
+          name="title"
+        />
+      </b-field> -->
+
       <b-field
         label="Content"
         custom-class="is-small"

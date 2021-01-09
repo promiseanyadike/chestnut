@@ -9,22 +9,28 @@
     </div>-->
 
     <b-table :data="pages" class="home_page">
-      <b-table-column label="#" field="#" width="50" centered v-slot="props">{{
-        props.index + 1
-      }}</b-table-column>
+      <template>
+        <b-table-column
+          label="#"
+          field="#"
+          width="50"
+          centered
+          v-slot="props"
+          >{{ props.index + 1 }}</b-table-column
+        >
 
-      <b-table-column label="Page Name">
-        <template v-slot:default="props">
+        <b-table-column label="Page Name" v-slot:default="props">
           <nuxt-link :to="'/pages' + props.row.route">
             <p @click="setPageId(props.row.id)">{{ props.row.name }}</p>
           </nuxt-link>
-          <b-table-column label=" " class="has-text-right">
-            <nuxt-link :to="'/pages' + props.row.route">
-              <i class="mdi mdi-eye icobtn" @click="setPageId(props.row.id)" />
-            </nuxt-link>
-          </b-table-column>
-        </template>
-      </b-table-column>
+        </b-table-column>
+
+        <b-table-column label="#" class="has-text-right" v-slot:default="props">
+          <nuxt-link :to="'/pages' + props.row.route">
+            <i class="mdi mdi-eye icobtn" @click="setPageId(props.row.id)" />
+          </nuxt-link>
+        </b-table-column>
+      </template>
 
       <template slot="empty">
         <section class="section">
