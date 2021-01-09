@@ -5,11 +5,18 @@
       :key="i"
       class="thefirmBody"
     >
-      <div v-html="allaboutchestnut.title" />
-      <div v-html="allaboutchestnut.content" />
+      <div
+        class="is-uppercase is-size-5 title"
+        v-html="allaboutchestnut.title"
+      />
+      <div
+        v-html="allaboutchestnut.content"
+        class="subtitle"
+        style="padding-top: 0.5rem"
+      />
     </div>
 
-    <section class="section no-padding-top">
+    <section class="section">
       <div class="container greyish about-padding">
         <div class="has-text-centered">
           <h1 class="about-header is-size-4">- Leadership -</h1>
@@ -17,7 +24,7 @@
         <div class="columns about-us is-multiline">
           <div
             class="column"
-            v-for="(x, i) in allFirmPage.slice(2, 4)"
+            v-for="(x, i) in allFirmPage.slice(2, 5)"
             :key="i"
           >
             <div class="img-center">
@@ -131,4 +138,7 @@ export default {
 
 <style lang="scss">
 @import "~assets/variable.scss";
+.section {
+  padding: 0 !important;
+}
 </style>

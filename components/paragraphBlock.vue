@@ -62,7 +62,7 @@ export default {
   flex-direction: row-reverse;
 }
 .paragraphBlock--content {
-  color: red;
+  color: black;
 }
 </style>
 

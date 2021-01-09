@@ -160,10 +160,10 @@
 }
 
 .thefirmBody {
-  padding: $spacing*4;
+  // padding: $spacing*2;
   // font-family: Oxygen;
   // font-size: 14px;
-
+  padding:3rem 3rem 2rem 3rem;
 
   &--title {
     color: #000000;
@@ -1171,7 +1171,7 @@ h1 {
 
 .second_section {
   background-image: url("/img/full-bloom.png");
-  padding-bottom: 2.875rem;
+  padding-bottom: 5.875rem;
 }
 
 @import "responsive.scss";
@@ -1232,7 +1232,7 @@ h1 {
 
 
 .services.is-uppercase.is-size-3{
-  padding: 3rem 0rem 2rem 6rem;
+  padding: 3rem 0rem 2rem 2.275rem;
   color: black;
   font-size: 1.6rem;
   font-weight: 600;
@@ -1285,7 +1285,7 @@ h1 {
 
 .about-us {
   width: 90%;
-  font-size: 18px;
+  // font-size: 18px;
   margin: 0 auto;
 }
 
@@ -1298,8 +1298,12 @@ h1 {
   display: flex;
   justify-content: center;
   padding: 10px;
+  height: 100%;
+  width: auto;
+  
 }
 
 .image-rounded{
   object-fit: cover;
+
 }

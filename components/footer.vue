@@ -5,8 +5,11 @@
         <div class="columns is-multiline">
           <div class="container aboutus">
             <div class="column">
-              <div class="has-text-white">about chestnutbolt</div>
-              <div class="about_content has-text-white has-text-left" v-html="aboutPages.content"></div>
+              <div class="has-text-white">About chestnutbolt</div>
+              <div
+                class="about_content has-text-white has-text-justified"
+                v-html="aboutPages.content"
+              ></div>
               <!-- <div v-html="data.title" class="has-text-white"></div>
               <div v-html="data.content" class="about_content has-text-white has-text-justified"></div>-->
             </div>
@@ -19,7 +22,11 @@
                   </span>
                   facebook
                 </a>
-                <a href="facebook.com/chestnutbolt.com" target="_blank" class="has-text-white">
+                <a
+                  href="facebook.com/chestnutbolt.com"
+                  target="_blank"
+                  class="has-text-white"
+                >
                   <span class="icon t">
                     <i class="mdi mdi-twitter"></i>
                   </span>
@@ -45,19 +52,27 @@
                 <div>
                   <ul>
                     <li>
-                      <nuxt-link to="/" style="color:yellow">Home</nuxt-link>
+                      <nuxt-link to="/" style="color: yellow">Home</nuxt-link>
                     </li>
                     <li>
-                      <nuxt-link to="/services" style="color:yellow">Our Services</nuxt-link>
+                      <nuxt-link to="/services" style="color: yellow"
+                        >Our Services</nuxt-link
+                      >
                     </li>
                     <li>
-                      <nuxt-link to="/Gallery" style="color:yellow">Gallery</nuxt-link>
+                      <nuxt-link to="/Gallery" style="color: yellow"
+                        >Gallery</nuxt-link
+                      >
                     </li>
                     <li>
-                      <nuxt-link to="/about" style="color:yellow">About Us</nuxt-link>
+                      <nuxt-link to="/about" style="color: yellow"
+                        >About Us</nuxt-link
+                      >
                     </li>
                     <li>
-                      <nuxt-link to="/contact" style="color:yellow">Contact</nuxt-link>
+                      <nuxt-link to="/contact" style="color: yellow"
+                        >Contact</nuxt-link
+                      >
                     </li>
                   </ul>
                 </div>
@@ -67,7 +82,10 @@
             <div class="column">
               <div class="has-text-white">
                 ChestnutBolt
-                <ul class="has-text-left" style="padding:2rem 0 0 0; list-style-type: square;">
+                <ul
+                  class="has-text-left"
+                  style="padding: 2rem 0 0 0; list-style-type: square"
+                >
                   <li style="padding-bottom: 0.5rem">
                     Applications and System Software Development
                     <br />
@@ -100,7 +118,7 @@
                   width="100%"
                   height="220"
                   frameborder="0"
-                  style="border:0;"
+                  style="border: 0"
                   allowfullscreen
                   aria-hidden="false"
                   tabindex="0"
@@ -113,7 +131,9 @@
       <div
         class="has-text-white has-text-centered"
         style="padding-bottom: 2rem"
-      >© 2019 ChestnutBolt . All rights reserved | Design by Anyadike Promise.</div>
+      >
+        © 2019 ChestnutBolt . All rights reserved | Design by Anyadike Promise.
+      </div>
     </section>
   </div>
 </template>
@@ -211,7 +231,7 @@ css code for footer*/
 }
 
 .about {
-  padding: 4rem 0;
+  padding: 3rem 0 2rem 0;
 }
 
 .container.aboutus {

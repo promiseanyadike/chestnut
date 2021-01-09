@@ -6,7 +6,7 @@
       :content="value.page.attributes.header.content"
       :image="value.page.attributes.header.image.data"
     />
-    <section class="second_section">
+    <section class="second_section" v-if="service.length > 0">
       <div class="services is-uppercase is-size-3">Services</div>
       <div class="container">
         <div class="columns is-multiline">
@@ -26,7 +26,7 @@
               </h4>-->
               <h4 class="never">
                 <span
-                  class="mdi mdi-switch icon has-text-info"
+                  class="mdi mdi-lightbulb-group icon has-text-info"
                   style="font-size: 60px"
                 ></span>
               </h4>
