@@ -1,5 +1,17 @@
 @import "variable.scss";
 
+@media (min-width : 769px) and (max-width: 1215px) {
+  .has-text-white.has-text-centered.copyright{
+    margin-top: 5rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .navbar-end a {
+    color: black !important;
+}
+}
 
 @media (max-width: 440px) {
   .homePage {
@@ -435,5 +447,8 @@
 
 .second_section {
     padding-bottom: 1rem;
+}
+.navbar-item {
+  color: black !important;
 }
 }

@@ -12,7 +12,7 @@
         <div class="columns is-multiline">
           <div
             class="column is-6 box-wrap"
-            v-for="(areas, i) in service"
+            v-for="(areas, i) in service.slice(0, 4)"
             :key="i"
           >
             <div
@@ -26,7 +26,7 @@
               </h4>-->
               <h4 class="never">
                 <span
-                  class="mdi mdi-lightbulb-group icon has-text-info"
+                  class="mdi mdi-lightbulb-group icon"
                   style="font-size: 60px"
                 ></span>
               </h4>
@@ -41,6 +41,11 @@
               ></div>
             </div>
           </div>
+        </div>
+        <div class="has-text-right view-more">
+          <nuxt-link to="/services">
+            <h1 class="content heading" style="color: black">MORE</h1>
+          </nuxt-link>
         </div>
       </div>
     </section>

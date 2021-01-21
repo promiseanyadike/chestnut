@@ -9,11 +9,7 @@
         class="is-uppercase is-size-5 title"
         v-html="allaboutchestnut.title"
       />
-      <div
-        v-html="allaboutchestnut.content"
-        class="subtitle"
-        style="padding-top: 0.5rem"
-      />
+      <div v-html="allaboutchestnut.content" class="subtitle" />
     </div>
 
     <section class="section">
@@ -32,7 +28,10 @@
             </div>
             <div class="top-margin">
               <div class="leadership has-text-centered">
-                <h3 class="subtitle has-text-black" v-html="x.title"></h3>
+                <h3
+                  class="subtitle has-text-black has-text-centered"
+                  v-html="x.title"
+                ></h3>
                 <h2
                   class="title has-text-black is-size-5"
                   v-html="x.content"
@@ -140,5 +139,11 @@ export default {
 @import "~assets/variable.scss";
 .section {
   padding: 0 !important;
+}
+.subtitle {
+  padding-top: 0.5rem;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.8rem;
 }
 </style>

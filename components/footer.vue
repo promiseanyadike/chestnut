@@ -4,7 +4,7 @@
       <div class="about">
         <div class="columns is-multiline">
           <div class="container aboutus">
-            <div class="column">
+            <div class="column" style="padding: 0">
               <div class="has-text-white">About chestnutbolt</div>
               <div
                 class="about_content has-text-white has-text-justified"
@@ -13,7 +13,7 @@
               <!-- <div v-html="data.title" class="has-text-white"></div>
               <div v-html="data.content" class="about_content has-text-white has-text-justified"></div>-->
             </div>
-            <div class="column">
+            <div class="column" style="padding: 0">
               <div class="has-text-white">Social Media Handles</div>
               <div class="social_media">
                 <a href="#" target="_blank" class="has-text-white">
@@ -79,7 +79,7 @@
               </div>
             </div>
             <!-- <div class="column">4th column</div> -->
-            <div class="column">
+            <div class="column" style="padding: 0">
               <div class="has-text-white">
                 ChestnutBolt
                 <ul
@@ -106,10 +106,10 @@
                     Indigenous sales of Electrical/Electronic materials
                     <br />
                   </li>
-                  <li>
+                  <!-- <li>
                     Other Forms of Technological/Engineering Works
                     <br />
-                  </li>
+                  </li> -->
                 </ul>
               </div>
               <div class="map">
@@ -128,10 +128,7 @@
           </div>
         </div>
       </div>
-      <div
-        class="has-text-white has-text-centered"
-        style="padding-bottom: 2rem"
-      >
+      <div class="has-text-white has-text-centered copyright">
         © 2019 ChestnutBolt . All rights reserved | Design by Anyadike Promise.
       </div>
     </section>
@@ -231,12 +228,13 @@ css code for footer*/
 }
 
 .about {
-  padding: 3rem 0 2rem 0;
+  padding: 5rem;
 }
 
 .container.aboutus {
   display: flex;
   text-align: center;
+  max-height: 27rem;
 }
 
 .social_media {
@@ -251,6 +249,8 @@ css code for footer*/
 
 .about_content.has-text-white {
   padding: 2rem 0;
+  height: 90%;
+  overflow: hidden;
 }
 
 .contact_address {
@@ -265,6 +265,15 @@ css code for footer*/
   .container.aboutus {
     display: block !important;
     text-align: left !important;
+    max-height: none !important;
+  }
+  .about_content.has-text-white {
+    padding: 2rem 0;
+    height: 50%;
+    overflow: hidden;
+  }
+  .about {
+    padding: 3rem !important;
   }
 }
 
@@ -273,6 +282,9 @@ css code for footer*/
     display: block !important;
     text-align: center !important;
   }
+}
+.has-text-white.has-text-centered.copyright {
+  padding-bottom: 2rem;
 }
 </style>
 

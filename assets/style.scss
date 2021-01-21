@@ -52,7 +52,9 @@
     font-weight: 600;
     line-height: 1.125;
     word-break: break-word;
-    font-family: Oxygen;
+    // font-family: Oxygen;
+    font-family: Lato, sans-serif;
+
     font-weight: 900;
   }
 
@@ -98,7 +100,9 @@
     font-weight: 600;
     line-height: 1.125;
     word-break: break-word;
-    font-family: Oxygen;
+    // font-family: Oxygen;
+    font-family: Lato, sans-serif;
+
     font-weight: 900;
   }
 
@@ -196,7 +200,9 @@ h1 {
   font-weight: 600;
   line-height: 1.125;
   word-break: break-word;
-  font-family: Oxygen, 'Open Sans', 'Helvetica Neue', sans-serif;
+  // font-family: Oxygen, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: Lato, sans-serif;
+
   padding: 10px 0px;
   text-transform: capitalize;
 
@@ -208,7 +214,9 @@ h1 {
   font-weight: 600;
   line-height: 1.125;
   word-break: break-word;
-  font-family: Oxygen;
+  // font-family: Oxygen;
+  font-family: Lato, sans-serif;
+
   padding-bottom: 30px;
 }
 
@@ -505,7 +513,9 @@ h1 {
 
     .contactTitle {
       margin-top: 20px;
-      font-family: Oxygen;
+      // font-family: Oxygen;
+      font-family: Lato, sans-serif;
+
       width: 120px;
       font-size: 20px;
       font-weight: 900;
@@ -1169,9 +1179,10 @@ h1 {
   color: white;
 }
 
+
 .second_section {
   background-image: url("/img/full-bloom.png");
-  padding-bottom: 5.875rem;
+  padding-bottom: 2rem;
 }
 
 @import "responsive.scss";
@@ -1198,7 +1209,9 @@ h1 {
       font-weight: 600;
       line-height: 1.125;
       word-break: break-word;
-      font-family: Oxygen;
+      // font-family: Oxygen;
+      font-family: Lato, sans-serif;
+
       font-weight: 900;
 
     }
@@ -1226,7 +1239,9 @@ h1 {
   font-weight: 600;
   line-height: 1.125;
   word-break: break-word;
-  font-family: Oxygen;
+  // font-family: Oxygen;
+  font-family: Lato, sans-serif;
+
   font-weight: 900;
 }
 
@@ -1238,7 +1253,8 @@ h1 {
   font-weight: 600;
   line-height: 1.125;
   word-break: break-word;
-  font-family: Oxygen;
+  // font-family: Oxygen;
+  font-family: Lato, sans-serif;
   font-weight: 900;
 }
 
