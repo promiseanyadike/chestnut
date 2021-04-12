@@ -447,8 +447,19 @@
 
 .second_section {
     padding-bottom: 1rem;
+    padding:0 !important;
 }
 .navbar-item {
   color: black !important;
+  
+}
+
+.is-uppercase.is-size-3{
+  text-align: center !important;
+}
+
+.services.is-uppercase.is-size-3{
+  text-align: center !important;
+
 }
 }

@@ -138,7 +138,8 @@ export default {
 <style lang="scss">
 @import "~assets/variable.scss";
 .section {
-  padding: 0 !important;
+  // padding: 0 !important;
+  padding: 0 0 4.53rem 0 !important;
 }
 .subtitle {
   padding-top: 0.5rem;

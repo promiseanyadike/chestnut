@@ -129,7 +129,7 @@
         </div>
       </div>
       <div class="has-text-white has-text-centered copyright">
-        © 2019 ChestnutBolt . All rights reserved | Design by Anyadike Promise.
+        © 2019 ChestnutBolt . All rights reserved | Powered by Anyadike Promise.
       </div>
     </section>
   </div>
