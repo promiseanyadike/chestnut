@@ -12,7 +12,7 @@
       <div v-html="allaboutchestnut.content" class="subtitle" />
     </div>
 
-    <section class="section">
+    <section class="section" style="padding: 0 0 5rem 0 !important">
       <div class="container greyish about-padding">
         <div class="has-text-centered">
           <h1 class="about-header is-size-4">- Leadership -</h1>
@@ -137,10 +137,10 @@ export default {
 
 <style lang="scss">
 @import "~assets/variable.scss";
-.section {
-  // padding: 0 !important;
-  padding: 0 0 4.53rem 0 !important;
-}
+// .section {
+//   // padding: 0 !important;
+//   padding: 0 0 4.53rem 0 !important;
+// }
 .subtitle {
   padding-top: 0.5rem;
   text-align: justify;

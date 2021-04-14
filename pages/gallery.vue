@@ -3,7 +3,7 @@
     <!-- <div class="grey-bg banner box-shadow">
       <h1 class="title has-text-centered is-size-4-mobile">{{ value.header }}</h1>
     </div> -->
-    <section class="section dark">
+    <section class="section dark" style="margin-top: 2rem">
       <div class="container">
         <div class="columns is-multiline">
           <div
