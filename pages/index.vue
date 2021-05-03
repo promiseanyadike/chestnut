@@ -7,7 +7,9 @@
       :image="value.page.attributes.header.image.data"
     />
     <section class="second_section" v-if="service.length > 0">
-      <div class="services is-uppercase is-size-3">Services</div>
+      <div class="services is-uppercase is-size-3" style="padding-left: 6rem">
+        Services
+      </div>
       <div class="container">
         <div class="columns is-multiline">
           <div
@@ -218,33 +220,29 @@
     </div>
     <!-- contact ends here -->
 
-    <section class="sectionsix">
-      <div class="has-text-centered has-text-white">
-        <div class="columns">
+    <div class="columns is-mobile has-text-centered has-text-white">
+      <div
+        class="column social"
+        :style="social.color"
+        v-for="social in socials"
+        :key="social.id"
+      >
+        <a
+          :href="social.link"
+          :style="social.color"
+          class="has-text-white"
+          :key="social.id"
+          target="_blank"
+        >
           <div
-            class="column social"
-            :style="social.color"
-            v-for="social in socials"
-            :key="social.id"
-          >
-            <a
-              :href="social.link"
-              :style="social.color"
-              class="has-text-white"
-              :key="social.id"
-              target="_blank"
-            >
-              <div
-                :class="social.icon"
-                class="social-icon mdi is-size-3-desktop"
-                v-html="social.text"
-              ></div>
-              <!-- {{social.text}} -->
-            </a>
-          </div>
-        </div>
+            :class="social.icon"
+            class="social-icon mdi is-size-3-desktop"
+            v-html="social.text"
+          ></div>
+          <!-- {{social.text}} -->
+        </a>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 

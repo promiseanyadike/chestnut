@@ -5,7 +5,7 @@
         <div class="columns is-multiline">
           <div class="container aboutus">
             <div class="column" style="padding: 0">
-              <div class="has-text-white">About chestnutbolt</div>
+              <div class="has-text-white id">About chestnutbolt</div>
               <div
                 class="about_content has-text-white has-text-justified"
                 v-html="aboutPages.content"
@@ -267,6 +267,9 @@ css code for footer*/
     text-align: left !important;
     max-height: none !important;
   }
+  .about .has-text-white.id {
+    padding-top: 2rem !important;
+  }
   .about_content.has-text-white {
     padding: 2rem 0;
     height: 50%;
@@ -276,6 +279,12 @@ css code for footer*/
     padding: 3rem !important;
   }
 }
+
+/* .columns.is-multiline {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+} */
 
 @media screen and (max-width: 420px) {
   .container.aboutus {

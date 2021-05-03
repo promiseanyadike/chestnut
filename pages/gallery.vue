@@ -54,6 +54,34 @@
         />
       </div>
     </section>
+
+    <section class="sectionsix">
+      <div class="has-text-centered has-text-white">
+        <div class="columns">
+          <div
+            class="column social"
+            :style="social.color"
+            v-for="social in socials"
+            :key="social.id"
+          >
+            <a
+              :href="social.link"
+              :style="social.color"
+              class="has-text-white"
+              :key="social.id"
+              target="_blank"
+            >
+              <div
+                :class="social.icon"
+                class="social-icon mdi is-size-3-desktop"
+                v-html="social.text"
+              ></div>
+              <!-- {{social.text}} -->
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -124,6 +152,30 @@ export default {
       perPage: 9,
       description: "welcome to our Gallery",
       isPaginated: true,
+      socials: [
+        {
+          id: 4,
+          icon: "mdi-facebook",
+          link: "https://www.facebook.com/dtouchexpertslaundry/",
+          color: "background-color: hsl(204, 86%, 53%)",
+          text: "like us on facebook",
+        },
+
+        {
+          id: 2,
+          icon: "mdi-twitter",
+          link: "https://twitter.com/dtouchexpertslaundry",
+          color: "background-color: grey",
+          text: "follow us on twitter",
+        },
+        {
+          id: 3,
+          icon: "mdi-instagram",
+          link: "https://www.instagram.com/dtouchexpertslaundry/",
+          color: "background-color: #553592",
+          text: "follow us on instagram",
+        },
+      ],
     };
   },
 

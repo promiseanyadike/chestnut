@@ -1,5 +1,5 @@
 <template>
-  <div class="second_section">
+  <div class="second_section" style="padding: 0">
     <div
       v-for="(allaboutchestnut, i) in allFirmPage.slice(0, 2)"
       :key="i"
@@ -12,12 +12,12 @@
       <div v-html="allaboutchestnut.content" class="subtitle" />
     </div>
 
-    <section class="section" style="padding: 0 0 5rem 0 !important">
+    <section class="section about_us">
       <div class="container greyish about-padding">
         <div class="has-text-centered">
           <h1 class="about-header is-size-4">- Leadership -</h1>
         </div>
-        <div class="columns about-us is-multiline">
+        <div class="columns">
           <div
             class="column"
             v-for="(x, i) in allFirmPage.slice(2, 5)"
@@ -38,6 +38,34 @@
                 ></h2>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectionsix">
+      <div class="has-text-centered has-text-white">
+        <div class="columns">
+          <div
+            class="column social"
+            :style="social.color"
+            v-for="social in socials"
+            :key="social.id"
+          >
+            <a
+              :href="social.link"
+              :style="social.color"
+              class="has-text-white"
+              :key="social.id"
+              target="_blank"
+            >
+              <div
+                :class="social.icon"
+                class="social-icon mdi is-size-3-desktop"
+                v-html="social.text"
+              ></div>
+              <!-- {{social.text}} -->
+            </a>
           </div>
         </div>
       </div>
@@ -85,6 +113,34 @@ export default {
   //     meta: this.firmPage.meta
   //   }
   // },
+  data() {
+    return {
+      socials: [
+        {
+          id: 4,
+          icon: "mdi-facebook",
+          link: "https://www.facebook.com/dtouchexpertslaundry/",
+          color: "background-color: hsl(204, 86%, 53%)",
+          text: "like us on facebook",
+        },
+
+        {
+          id: 2,
+          icon: "mdi-twitter",
+          link: "https://twitter.com/dtouchexpertslaundry",
+          color: "background-color: grey",
+          text: "follow us on twitter",
+        },
+        {
+          id: 3,
+          icon: "mdi-instagram",
+          link: "https://www.instagram.com/dtouchexpertslaundry/",
+          color: "background-color: #553592",
+          text: "follow us on instagram",
+        },
+      ],
+    };
+  },
 
   async asyncData({ store, error }) {
     try {

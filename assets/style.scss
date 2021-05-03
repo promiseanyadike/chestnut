@@ -1184,7 +1184,16 @@ h1 {
   background-image: url("/img/full-bloom.png");
   // padding-bottom: 6rem;
   padding: 3rem 0;
+
+
 }
+
+
+.section.about_us {
+  padding: 0 0 7.5rem 0;
+}
+
+
 
 @import "responsive.scss";
 
@@ -1249,7 +1258,7 @@ h1 {
 
 .services.is-uppercase.is-size-3{
   // padding: 3rem 0rem 2rem 2.275rem;
-  padding-left: 2rem;
+  // padding-left: 2rem;
   color: black;
   font-size: 1.6rem;
   font-weight: 600;
