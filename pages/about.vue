@@ -152,7 +152,7 @@ export default {
       console.log(x);
       let data = {
         image: store.state.pages.AboutPage.image.data,
-        height: "400px",
+        height: "460px",
         left: store.state.pages.AboutPage.title,
       };
       store.dispatch("setBillboard", data);

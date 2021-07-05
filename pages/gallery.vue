@@ -122,7 +122,7 @@ export default {
 
     let data = {
       image: store.state.pages.galleryPage.page.attributes.header.image.data,
-      height: "400px",
+      height: "460px",
       right: "",
       left: store.state.pages.galleryPage.page.attributes.header.title,
     };

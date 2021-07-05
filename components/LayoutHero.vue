@@ -12,10 +12,10 @@
             'background-image': `linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(${carousel.image.data})`,
           }"
         >
-          <div class="hero-head">
-            <!-- <layout-header /> -->
+          <!--  <div class="hero-head">
+            <layout-header />
             <navbar-menu />
-          </div>
+          </div> -->
           <div class="hero-body">
             <div class="container has-text-centered">
               <h4 class="title">
@@ -34,15 +34,15 @@
 
 <script>
 // import LayoutHeader from "@/components/header";
-import NavbarMenu from "@/components/NavbarMenu.vue";
+// import NavbarMenu from "@/components/NavbarMenu.vue";
 
 import { mapState } from "vuex";
 
 export default {
-  components: {
-    // LayoutHeader,
-    NavbarMenu,
-  },
+  // components: {
+  //   // LayoutHeader,
+  //   NavbarMenu,
+  // },
   data() {
     return {
       pauseHover: true,

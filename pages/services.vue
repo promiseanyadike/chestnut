@@ -60,7 +60,7 @@ export default {
 
       let data = {
         image: store.state.pages.servicePage.image.data,
-        height: "400px",
+        height: "460px",
         right: "",
         left: store.state.pages.servicePage.title,
       };

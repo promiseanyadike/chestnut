@@ -188,7 +188,7 @@ export default {
     ]);
     let data = {
       image: store.state.pages.contactPage.page.attributes.header.image.data,
-      height: "400px",
+      height: "460px",
       left: store.state.pages.contactPage.page.attributes.header.title,
       right: "",
     };

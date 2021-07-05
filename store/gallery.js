@@ -46,7 +46,7 @@ export const actions = {
 	async getInstagramGallery({ commit }) {
 		try {
 			// let { data } = await this.$axios.get(`https://api.instagram.com/v1/users/self/media/recent/?access_token=550744093.6dd2db4.90eacb3fd04f4a929346992b4ea1eb5a`);
-			let { data } = await this.$axios.get('https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp&access_token=IGQVJVcVBpRnllM2RzMVdGckIwOG5MWUZAGaEY5SklTZATE0d2poZAE9rbXlTQ0hBNzJtcHpOX3lhaTJxTzBSSGJmV1RPcjBpbklWbzkwTW1WYlZAPRVd5V1JWYVppMHlnanJSclZAQTHJ5a0dBek9IVk44WQZDZD');
+			let { data } = await this.$axios.get('https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp&access_token=IGQVJVVUxjQ2hnTTg3Q01zTkRFN1pSX2xCeVhhaUZABeno2cG9SWGs4RFVQbDdnUmVpOE1NQWRZAYTUwcHYyNzRkOWVGdFNkT1p3Q2VuTlpISEk2RHd6b1ZA5RnZAlQkxqMUZAQTUpab2NESENUVVBKQXJmegZDZD');
 			// let { meta } = data;
 			// if (meta.code == 200) {
 			//   let { data: list } = data;
